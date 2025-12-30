@@ -1,0 +1,375 @@
+/* Solutions Page Specific Styles */
+
+/* Solutions Wrapper (Hero + Grid) */
+.solutions-hero-wrapper {
+    background: linear-gradient(106deg, #E7F5F4 4%, #FFFFFF 107%);
+    padding: 80px 0 100px;
+    /* Increased bottom padding */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* Space between title area and grid */
+}
+
+/* Hero Content Inner */
+.hero-content-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+}
+
+.badge-pill {
+    background-color: #D5ECE9;
+    color: #2F3E46;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.solutions-hero-wrapper h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #12131A;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.solutions-hero-wrapper p {
+    font-size: 18px;
+    color: #555555;
+    font-weight: 400;
+}
+
+/* Solutions Grid Container */
+.solutions-grid-container {
+    position: relative;
+    z-index: 10;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 992px) {
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.solution-card {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    /* Keeping a subtle border for definition */
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: none;
+    /* Removing shadow for cleaner cleaner look on gradient */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    border-color: #248F84;
+}
+
+.card-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+/* Specific Icon wrapper colors */
+.hospital-icon {
+    background-color: #E0F2F1;
+    color: #248F84;
+}
+
+.clinic-icon {
+    background-color: #E0F2F1;
+    color: #248F84;
+}
+
+.corporate-icon {
+    background-color: #E0F2F1;
+    color: #248F84;
+}
+
+.global-icon {
+    background-color: #E0F2F1;
+    color: #248F84;
+}
+
+.solution-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #12131A;
+    margin-bottom: 16px;
+}
+
+.solution-card p {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    width: 100%;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #4A4A4A;
+    font-size: 15px;
+}
+
+.feature-list li:last-child {
+    margin-bottom: 0;
+}
+
+.feature-list li i {
+    color: #248F84;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.solution-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    padding: 14px 24px;
+}
+
+
+/* Custom Solution Section */
+.custom-solution-section {
+    background-color: #E7F5F4;
+    /* Light teal bg */
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.custom-solution-heading {
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.custom-solution-heading h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #12131A;
+    margin-bottom: 20px;
+}
+
+.custom-solution-heading p {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 10;
+}
+
+.step-card {
+    background: #FFFFFF;
+    padding: 32px 24px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #E0F2F1;
+    color: #248F84;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.step-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #12131A;
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+
+/* Decorative backgrounds */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(13, 138, 138, 0.08);
+    /* Faint teal */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -50px;
+}
+
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    bottom: -50px;
+    left: 10%;
+}
+
+.shape-3 {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    left: -100px;
+    background: rgba(13, 138, 138, 0.05);
+}
+
+.shape-4 {
+    width: 250px;
+    height: 250px;
+    top: 20px;
+    right: 5%;
+    background: rgba(13, 138, 138, 0.05);
+}
+
+/* Trust/Stats Section (Teal Background) */
+.solutions-trust-section {
+    background-color: #248F84;
+    /* Accent color from design */
+    padding: 80px 0;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.trust-icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    color: #248F84;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.trust-icon-circle img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.trust-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.trust-item p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 220px;
+}
+
+/* Specific decorative shapes for this section */
+.trust-shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -100px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.trust-shape-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    right: -100px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 992px) {
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+}

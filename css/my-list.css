@@ -1,0 +1,360 @@
+/* My List Page Styles */
+
+main {
+    position: relative;
+    padding: 40px 0 80px;
+    background: linear-gradient(106deg, #E7F5F4 4%, #FFFFFF 107%);
+    min-height: 80vh;
+    overflow-x: hidden;
+}
+
+/* Background Ellipses */
+.bg-ellipse-list {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(36, 143, 132, 0.08);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ellipse-list-1 {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    right: -100px;
+    background: #D9EFE9;
+    opacity: 0.6;
+}
+
+.ellipse-list-2 {
+    width: 300px;
+    height: 300px;
+    bottom: 50px;
+    left: -80px;
+    background: #E0F2F1;
+}
+
+.ellipse-list-3 {
+    width: 150px;
+    height: 150px;
+    top: 100px;
+    right: 20%;
+    background: #EFFCF9;
+}
+
+.my-list-container {
+    position: relative;
+    z-index: 10;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #4A5565;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 32px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    color: #4A5565;
+    font-size: 18px;
+}
+
+.list-layout {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+/* Left Panel */
+.list-left-panel {
+    flex: 0 0 420px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.panel-header {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.panel-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #12131A;
+}
+
+.item-count {
+    color: #4A5565;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 4px;
+    /* Space for scrollbar */
+}
+
+/* Scrollbar styling for list */
+.product-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.product-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.product-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.list-item {
+    border: 1px solid #EEEEEE;
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #FFFFFF;
+}
+
+.list-item:hover {
+    border-color: #B2DFdb;
+    background-color: #FAFCFC;
+}
+
+.list-item.active {
+    border: 1px solid var(--accent-color);
+    background-color: #F0F9F8;
+    box-shadow: 0 4px 12px rgba(36, 143, 132, 0.08);
+}
+
+.item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.item-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #12131A;
+    margin-bottom: 4px;
+}
+
+.item-category {
+    font-size: 12px;
+    color: #4A5565;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #FF5C5C;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn:hover {
+    opacity: 0.8;
+}
+
+.item-bottom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-pill {
+    background: #F5F7F9;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #12131A;
+    display: inline-block;
+}
+
+/* Total Section */
+.list-total-section {
+    border-top: 1px solid #EEEEEE;
+    padding-top: 24px;
+    margin-top: auto;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #12131A;
+}
+
+.total-value {
+    color: var(--accent-color);
+    font-size: 20px;
+}
+
+.request-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+    padding: 14px;
+}
+
+/* Right Panel */
+.list-right-panel {
+    flex: 1;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    min-height: 500px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.panel-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #12131A;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 16px;
+}
+
+/* Product Detail View */
+.product-detail-view {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* .detail-image {
+    width: 100%;
+    height: 300px;
+    background-color: #F0F0F0;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.detail-info h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #12131A;
+    margin-bottom: 8px;
+}
+
+.detail-category {
+    font-size: 16px;
+    color: #4A5565;
+    margin-bottom: 24px;
+}
+
+.detail-row {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 16px;
+    color: #12131A;
+    font-weight: 500;
+}
+
+.white-label-badge {
+    display: inline-flex;
+    padding: 6px 12px;
+    background: #F5F5F5;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #4A5565;
+    font-weight: 500;
+}
+
+.description-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4A5565;
+}
+
+@media (max-width: 900px) {
+    .list-layout {
+        flex-direction: column;
+    }
+
+    .list-left-panel {
+        width: 100%;
+        flex: none;
+    }
+}
