@@ -539,6 +539,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -1161,6 +1168,9 @@ body {
     background: transparent;
     text-decoration: none;
     transition: all 0.2s ease;
+    height: 60px;
+    box-sizing: border-box;
+    color: #0D8A8A;
 }
 
 .view-all-btn span {
@@ -1321,6 +1331,207 @@ body {
     line-height: 24px;
     color: #d1d5db;
     white-space: nowrap;
+}
+
+/* ==========================
+   NEW Solutions Section - Card Based Design
+   ========================== */
+.solutions-section-new {
+    padding: 100px 0 120px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #E7F5F4 50%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Ellipses */
+.solutions-new-ellipse-1 {
+    width: 365px;
+    height: 365px;
+    left: -180px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(231, 245, 244, 0.6);
+    border-radius: 50%;
+}
+
+.solutions-new-ellipse-2 {
+    width: 85px;
+    height: 85px;
+    left: 60px;
+    top: 65%;
+    background: rgba(231, 245, 244, 0.8);
+    border-radius: 50%;
+}
+
+.solutions-new-ellipse-3 {
+    width: 40px;
+    height: 40px;
+    left: 100px;
+    top: 75%;
+    background: rgba(200, 230, 228, 0.6);
+    border-radius: 50%;
+}
+
+.solutions-new-ellipse-4 {
+    width: 450px;
+    height: 450px;
+    right: -200px;
+    bottom: -200px;
+    left: auto;
+    background: rgba(231, 245, 244, 0.7);
+    border-radius: 50%;
+}
+
+/* Header Styles */
+.solutions-new-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 5;
+}
+
+.solutions-new-header h2 {
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+}
+
+.solutions-new-header p {
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+/* Cards Grid - 4 columns */
+.solutions-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Individual Solution Card */
+.solution-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.solution-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Container */
+.solution-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(14, 127, 117, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.solution-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Card Title */
+.solution-card h3 {
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+}
+
+/* Card Description */
+.solution-card p {
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+/* Learn More Link */
+.solution-link {
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0E7F75;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease;
+}
+
+.solution-card:hover .solution-link {
+    gap: 10px;
+}
+
+.solution-link svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+    .solutions-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solutions-new-header h2 {
+        font-size: 32px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .solutions-section-new {
+        padding: 60px 0 80px;
+    }
+
+    .solutions-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .solutions-new-header h2 {
+        font-size: 28px;
+    }
+
+    .solutions-new-header p {
+        font-size: 15px;
+    }
+
+    .solution-card {
+        padding: 24px;
+    }
 }
 
 /* Quality Section */
@@ -4209,12 +4420,8 @@ body {
     flex-shrink: 0;
 }
 
-/* Footer Logo Image */
-.footer-logo-image {
-    height: 40px;
-    width: auto;
-    filter: brightness(0) invert(1);
-}
+/* Footer Logo Image - Base rule (overridden by later rule at line ~5196) */
+/* Note: Removed filter: brightness(0) invert(1) which was causing logo to appear white */
 
 /* Footer Language and Social */
 .footer-lang-social {
@@ -4792,4 +4999,323 @@ body {
         width: 100%;
         text-align: center;
     }
+}
+
+/* Legal Pages Styles */
+.legal-content-section {
+    padding: 80px 0;
+    background-color: #F9FAFB;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.legal-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.legal-content h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.legal-content h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.legal-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 16px;
+}
+
+.legal-content ul,
+.legal-content ol {
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.legal-content li {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.last-updated {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 40px;
+    display: block;
+    font-style: italic;
+}
+
+/* FAQ Page Styles */
+.faq-hero,
+.about-hero,
+.contact-hero,
+.products-hero,
+.product-range-hero,
+.solutions-hero-wrapper,
+.blogs-header,
+.blog-detail-page,
+.quote-page-main,
+.my-list-main,
+.legal-content-section {
+    background: linear-gradient(106deg, #E7F5F4 4.3%, #FFFFFF 106.7%);
+}
+
+.faq-hero {
+    /* Kept padding/text-align specific to FAQ if needed, though most heroes share this */
+    padding: 80px 0;
+    text-align: center;
+}
+
+
+.faq-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.faq-hero p {
+    font-size: 18px;
+    color: var(--text-body);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 16px;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--accent-color);
+}
+
+.faq-question .iconplus {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question .iconplus {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-right: 20px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    /* Approximate max height */
+    transition: max-height 0.3s ease-in;
+}
+
+.faq-answer p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-body);
+    padding-bottom: 24px;
+}
+
+/* Footer Logo Styles */
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.footer-logo-image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-tagline {
+    color: #d1d5db;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    margin-top: 4px;
+}
+
+/* Toast Notification Styles */
+.toast-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 420px;
+    z-index: 10000;
+    transform: translateX(calc(100% + 40px));
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid #F59E0B;
+}
+
+.toast-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-notification.toast-warning {
+    border-left-color: #F59E0B;
+}
+
+.toast-notification.toast-warning .toast-icon {
+    color: #F59E0B;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.toast-notification.toast-success {
+    border-left-color: #10B981;
+}
+
+.toast-notification.toast-success .toast-icon {
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.toast-notification.toast-info {
+    border-left-color: #3B82F6;
+}
+
+.toast-notification.toast-info .toast-icon {
+    color: #3B82F6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.toast-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.toast-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toast-message {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1F2937;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.toast-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.toast-link:hover {
+    color: #1B7067;
+    text-decoration: underline;
+}
+
+.toast-close {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    color: #9CA3AF;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast-close:hover {
+    background: #F3F4F6;
+    color: #6B7280;
 }

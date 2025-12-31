@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Docman Labs</title>
-    <meta name="description"
-        content="Explore our comprehensive range of healthcare products including pharmaceuticals, medical disposables, wound care, and hospital equipment.">
+    <title>FAQ - Docman Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -49,9 +47,8 @@
                         <a href="#" aria-label="YouTube">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.54 6.42C22.4212 5.94541 22.1793 5.51057 21.8387 5.15941C21.498 4.80824 21.0708 4.55318 20.6 4.42C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.46C2.92925 4.59318 2.50198 4.84824 2.16135 5.19941C1.82072 5.55057 1.57879 5.98541 1.46 6.46C1.14521 8.20556 0.991235 9.97631 1 11.75C0.988779 13.537 1.14277 15.3213 1.46 17.08C1.59096 17.5398 1.83831 17.9581 2.17814 18.2945C2.51798 18.6308 2.93882 18.8738 3.4 19C5.12 19.46 12 19.46 12 19.46C12 19.46 18.88 19.46 20.6 19C21.0708 18.8668 21.498 18.6118 21.8387 18.2606C22.1793 17.9094 22.4212 17.4746 22.54 17C22.8524 15.2676 23.0063 13.5103 23 11.75C23.0112 9.96295 22.8573 8.1787 22.54 6.42Z" />
-                                <path d="M9.75 15.02L15.5 11.75L9.75 8.48V15.02Z" fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.582 6.186C21.352 5.326 20.674 4.648 19.814 4.418C18.254 4 12 4 12 4C12 4 5.746 4 4.186 4.418C3.326 4.648 2.648 5.326 2.418 6.186C2 7.746 2 12 2 12C2 12 2 16.254 2.418 17.814C2.648 18.674 3.326 19.352 4.186 19.582C5.746 20 12 20 12 20C12 20 18.254 20 19.814 19.582C20.674 19.352 21.352 18.674 21.582 17.814C22 16.254 22 12 22 12C22 12 22 7.746 21.582 6.186ZM10 15.464V8.536L16 12L10 15.464Z" />
                             </svg>
                         </a>
                     </div>
@@ -63,15 +60,13 @@
         <div class="main-nav">
             <div class="container nav-container">
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/logo.png" alt="Docman Laboratories" class="logo-image">
-                    </a>
+                    <img src="assets/logo.png" alt="Docman Laboratories" class="logo-image">
                 </div>
                 <nav>
                     <ul class="nav-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="products.html" class="active">Products</a></li>
+                        <li><a href="products.html">Products</a></li>
                         <li><a href="solutions.html">Solutions</a></li>
                         <li><a href="blogs.html">Blogs</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -130,147 +125,101 @@
         </div>
     </header>
 
-    <!-- Products Hero Section -->
-    <section class="product-range-hero">
-        <div class="bg-ellipse product-range-ellipse-1"></div>
-        <div class="bg-ellipse product-range-ellipse-2"></div>
-        <div class="bg-ellipse product-range-ellipse-3"></div>
-        <div class="container">
-            <!-- Products Tag -->
-            <span class="products-tag">PRODUCTS</span>
+    <!-- FAQ Hero Section -->
+    <section class="faq-hero">
+        <div class="container faq-hero-container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our products, services, and ordering process.</p>
+        </div>
+    </section>
 
-            <!-- Main Heading -->
-            <h1 class="product-range-title">Our Product Range</h1>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container faq-container">
+            <div class="faq-wrapper">
 
-            <!-- Search Bar -->
-            <div class="product-search-bar">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="8" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M21 21L16.65 16.65" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <input type="text" placeholder="Search products..." class="product-search-input">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I place an order for bulk supplies?</span>
+                        <span class="iconplus">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can place a bulk order by contacting our sales team directly through the "Request Quote"
+                            page or by emailing us at sales@docmanlabs.com. Our team will assist you with pricing,
+                            availability, and shipping options.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you ship internationally?</span>
+                        <span class="iconplus">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Docman Laboratories exports to over 40 countries worldwide. We handle all necessary
+                            documentation and logistics to ensure smooth delivery to your location.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What certifications do your products have?</span>
+                        <span class="iconplus">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our products are ISO 9001:2015 certified, and we follow Good Distribution Practices (GDP).
+                            Many of our products also carry CE marking and other relevant international quality
+                            certifications.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I request a product catalog?</span>
+                        <span class="iconplus">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. You can download our digital catalog from the "Products" page or request a
+                            physical copy by contacting our customer support team.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your return policy for damaged goods?</span>
+                        <span class="iconplus">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We have a strict quality control process, but in the rare event of damaged goods, please
+                            report the issue within 48 hours of receipt. We will arrange/review the claim and provide a
+                            replacement or credit as per our terms.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer white-label manufacturing?</span>
+                        <span class="iconplus">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer contract manufacturing and private labeling services for select pharmaceutical
+                            and medical products. Please contact our business development team for more details.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Product Categories List Section -->
-    <section class="product-categories-section">
-        <div class="container">
-            <!-- Category 1: Pharmaceutical Products -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Pharmaceutical Products</h2>
-                    <span class="category-count">250+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Anti biotics</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Cardiovascular</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">CNS Anti-diabetic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Analgesics</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
+    <section id="contact" class="cta-section">
+        <div class="bg-ellipse cta-ellipse-1"></div>
+        <div class="bg-ellipse cta-ellipse-2"></div>
+        <div class="container cta-container">
+            <h2>Still have questions?</h2>
+            <p>Can't find the answer you're looking for? Please contact our support team.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-white">Contact Support →</a>
             </div>
-
-            <!-- Category 2: Bandages and Surgical dressings -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Bandages and Surgical dressings</h2>
-                    <span class="category-count">300+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Gauze</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Crepe</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Elastic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Compress</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Paraffin</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Cotton</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Plaster of Paris Bandages</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-
-            <!-- Category 3: Dental Equipments -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Dental Equipments</h2>
-                    <span class="category-count">80+ <span class="count-label">Products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Machines</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Hand Pieces</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Filling materials</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Polishing Items</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-
-            <!-- Category 4: Hospital Equipment -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Hospital Equipment</h2>
-                    <span class="category-count">80+ <span class="count-label">Products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Diagnostic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Surgical</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Patient Care</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Laboratory</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-
-            <!-- Category 5: Medical Disposables -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Medical Disposables</h2>
-                    <span class="category-count">300+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Syringes</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Gloves</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Catheters</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">IV Sets</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="product-cta-section">
-        <div class="bg-ellipse product-cta-ellipse-1"></div>
-        <div class="bg-ellipse product-cta-ellipse-2"></div>
-        <div class="container product-cta-container">
-            <h2 class="product-cta-title">Need something specific?</h2>
-            <p class="product-cta-desc">Contact us with your requirements and we will help you find the right products.
-            </p>
-            <a href="contact.html" class="request-quote-btn">
-                Request Quote
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
         </div>
     </section>
 
@@ -346,7 +295,7 @@
                     <h4>Company</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="faq.html">Faq</a></li>
                         <li><a href="index.html#presence">Global Presence</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>

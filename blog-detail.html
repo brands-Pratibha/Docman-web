@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Docman Labs</title>
-    <meta name="description"
-        content="Explore our comprehensive range of healthcare products including pharmaceuticals, medical disposables, wound care, and hospital equipment.">
+    <meta name="description" content="Read detailed healthcare insights and articles from Docman Labs.">
+    <title>Blog Detail - Docman Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blogs.css">
+    <link rel="stylesheet" href="css/blog-detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -59,6 +60,7 @@
             </div>
         </div>
 
+
         <!-- Main Navigation -->
         <div class="main-nav">
             <div class="container nav-container">
@@ -71,9 +73,9 @@
                     <ul class="nav-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="products.html" class="active">Products</a></li>
+                        <li><a href="products.html">Products</a></li>
                         <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="blogs.html" class="active">Blogs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -130,149 +132,89 @@
         </div>
     </header>
 
-    <!-- Products Hero Section -->
-    <section class="product-range-hero">
-        <div class="bg-ellipse product-range-ellipse-1"></div>
-        <div class="bg-ellipse product-range-ellipse-2"></div>
-        <div class="bg-ellipse product-range-ellipse-3"></div>
-        <div class="container">
-            <!-- Products Tag -->
-            <span class="products-tag">PRODUCTS</span>
+    <main class="blog-detail-page">
+        <!-- Background Ellipses (reused from blogs page) -->
+        <div class="bg-ellipse blogs-ellipse-1"></div>
+        <div class="bg-ellipse blogs-ellipse-2"></div>
 
-            <!-- Main Heading -->
-            <h1 class="product-range-title">Our Product Range</h1>
-
-            <!-- Search Bar -->
-            <div class="product-search-bar">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="8" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M21 21L16.65 16.65" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <input type="text" placeholder="Search products..." class="product-search-input">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-container">
+            <div class="container">
+                <a href="blogs.html" class="breadcrumb-link">
+                    < Back to Blogs</a>
             </div>
         </div>
-    </section>
 
-    <!-- Product Categories List Section -->
-    <section class="product-categories-section">
-        <div class="container">
-            <!-- Category 1: Pharmaceutical Products -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Pharmaceutical Products</h2>
-                    <span class="category-count">250+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Anti biotics</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Cardiovascular</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">CNS Anti-diabetic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Analgesics</span>
+        <!-- Content Container -->
+        <article class="blog-article" id="blog-content-area">
+            <!-- Dynamically populated content -->
+            <div class="container">
+                <div class="blog-header-wrapper">
+                    <span class="blog-category" id="detail-category">Category</span>
+                    <h1 id="detail-title">Blog Title</h1>
+
+                    <div class="blog-meta-detail">
+                        <div class="author-info">
+                            <span class="author-avatar" id="detail-avatar">AB</span>
+                            <div class="author-details">
+                                <span class="author-name" id="detail-author">Author Name</span>
+                                <span class="author-role" id="detail-role">Role</span>
+                            </div>
+                        </div>
+                        <div class="blog-date">
+                            <span id="detail-date"><i class="far fa-calendar"></i> Date</span>
+                            <span id="detail-readtime"><i class="far fa-clock"></i> Read Time</span>
+                        </div>
                     </div>
                 </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
 
-            <!-- Category 2: Bandages and Surgical dressings -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Bandages and Surgical dressings</h2>
-                    <span class="category-count">300+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Gauze</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Crepe</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Elastic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Compress</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Paraffin</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Cotton</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Plaster of Paris Bandages</span>
+                <div class="blog-hero-image-wrapper">
+                    <img id="detail-image" src="" alt="Blog Cover Image">
+                </div>
+
+                <div class="blog-content-body max-width-container" id="detail-body">
+                    <!-- HTML Content will be injected here -->
+                    <p>Loading article...</p>
+                </div>
+
+                <div class="share-article max-width-container">
+                    <span>Share this article:</span>
+                    <div class="share-links">
+                        <a href="#" class="share-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-icon"><i class="fa fa-envelope"></i></a>
                     </div>
                 </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
             </div>
+        </article>
 
-            <!-- Category 3: Dental Equipments -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Dental Equipments</h2>
-                    <span class="category-count">80+ <span class="count-label">Products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Machines</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Hand Pieces</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Filling materials</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Polishing Items</span>
-                    </div>
+        <!-- Related Articles -->
+        <section class="related-articles-section">
+            <div class="container">
+                <h2 class="section-title">Related Articles</h2>
+                <div class="blog-grid" id="related-posts-grid">
+                    <!-- Populated by JS -->
                 </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
             </div>
+        </section>
 
-            <!-- Category 4: Hospital Equipment -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Hospital Equipment</h2>
-                    <span class="category-count">80+ <span class="count-label">Products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Diagnostic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Surgical</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Patient Care</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Laboratory</span>
-                    </div>
+        <!-- Newsletter Section (Reused) -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated with Healthcare Insights</h2>
+                    <p>Subscribe to our newsletter for the latest updates in healthcare technology and tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Id">
+                        <button type="submit" class="subscribe-btn">Subscribe <i
+                                class="fas fa-arrow-right"></i></button>
+                    </form>
                 </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
             </div>
+        </section>
 
-            <!-- Category 5: Medical Disposables -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Medical Disposables</h2>
-                    <span class="category-count">300+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Syringes</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Gloves</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Catheters</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">IV Sets</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="product-cta-section">
-        <div class="bg-ellipse product-cta-ellipse-1"></div>
-        <div class="bg-ellipse product-cta-ellipse-2"></div>
-        <div class="container product-cta-container">
-            <h2 class="product-cta-title">Need something specific?</h2>
-            <p class="product-cta-desc">Contact us with your requirements and we will help you find the right products.
-            </p>
-            <a href="contact.html" class="request-quote-btn">
-                Request Quote
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
-    </section>
+    </main>
 
     <footer class="main-footer">
         <div class="container">
@@ -403,6 +345,8 @@
         </div>
     </footer>
 
+    <script src="js/blog-data.js"></script>
+    <script src="js/blog-detail.js"></script>
     <script src="js/main.js"></script>
 </body>
 

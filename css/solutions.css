@@ -18,6 +18,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    /* Ensure vertical start alignment */
+    text-align: left;
+    /* Explicitly set text align left */
+    width: 100%;
+    /* Ensure full width */
     position: relative;
     z-index: 10;
 }
@@ -57,11 +63,17 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    max-width: 1000px;
+    /* Constrain width for compactness */
+    margin: 0 auto;
+    /* Center align the grid */
 }
 
 @media (max-width: 992px) {
     .solutions-grid {
         grid-template-columns: 1fr;
+        max-width: 500px;
+        /* Constrain single column width too */
     }
 }
 
@@ -70,7 +82,8 @@
     border: 1px solid #E0E0E0;
     /* Keeping a subtle border for definition */
     border-radius: 24px;
-    padding: 40px;
+    padding: 32px;
+    /* Reduced padding for compactness */
     box-shadow: none;
     /* Removing shadow for cleaner cleaner look on gradient */
     display: flex;

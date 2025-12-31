@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Docman Labs</title>
-    <meta name="description"
-        content="Explore our comprehensive range of healthcare products including pharmaceuticals, medical disposables, wound care, and hospital equipment.">
+    <title>Blogs - Docman Labs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blogs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -59,6 +58,7 @@
             </div>
         </div>
 
+
         <!-- Main Navigation -->
         <div class="main-nav">
             <div class="container nav-container">
@@ -71,9 +71,9 @@
                     <ul class="nav-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="products.html" class="active">Products</a></li>
+                        <li><a href="products.html">Products</a></li>
                         <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="blogs.html" class="active">Blogs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -130,149 +130,222 @@
         </div>
     </header>
 
-    <!-- Products Hero Section -->
-    <section class="product-range-hero">
-        <div class="bg-ellipse product-range-ellipse-1"></div>
-        <div class="bg-ellipse product-range-ellipse-2"></div>
-        <div class="bg-ellipse product-range-ellipse-3"></div>
-        <div class="container">
-            <!-- Products Tag -->
-            <span class="products-tag">PRODUCTS</span>
-
-            <!-- Main Heading -->
-            <h1 class="product-range-title">Our Product Range</h1>
-
-            <!-- Search Bar -->
-            <div class="product-search-bar">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="8" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M21 21L16.65 16.65" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <input type="text" placeholder="Search products..." class="product-search-input">
+    <main class="blogs-page">
+        <div class="bg-ellipse blogs-ellipse-1"></div>
+        <div class="bg-ellipse blogs-ellipse-2"></div>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-container">
+            <div class="container">
+                <a href="index.html" class="breadcrumb-link">
+                    < Back to Home</a>
             </div>
         </div>
-    </section>
 
-    <!-- Product Categories List Section -->
-    <section class="product-categories-section">
-        <div class="container">
-            <!-- Category 1: Pharmaceutical Products -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Pharmaceutical Products</h2>
-                    <span class="category-count">250+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Anti biotics</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Cardiovascular</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">CNS Anti-diabetic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Analgesics</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-
-            <!-- Category 2: Bandages and Surgical dressings -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Bandages and Surgical dressings</h2>
-                    <span class="category-count">300+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Gauze</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Crepe</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Elastic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Compress</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Paraffin</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Cotton</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Plaster of Paris Bandages</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-
-            <!-- Category 3: Dental Equipments -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Dental Equipments</h2>
-                    <span class="category-count">80+ <span class="count-label">Products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Machines</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Hand Pieces</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Filling materials</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Polishing Items</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-
-            <!-- Category 4: Hospital Equipment -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Hospital Equipment</h2>
-                    <span class="category-count">80+ <span class="count-label">Products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Diagnostic</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Surgical</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Patient Care</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Laboratory</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
-            </div>
-
-            <!-- Category 5: Medical Disposables -->
-            <div class="product-category-item">
-                <div class="category-info">
-                    <h2 class="category-title">Medical Disposables</h2>
-                    <span class="category-count">300+ <span class="count-label">products</span></span>
-                    <div class="category-tags">
-                        <span class="category-tag">Syringes</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Gloves</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">Catheters</span>
-                        <span class="tag-separator">|</span>
-                        <span class="category-tag">IV Sets</span>
-                    </div>
-                </div>
-                <a href="products-listing.html" class="view-all-category-btn">View All</a>
+        <!-- Blogs Header -->
+        <div class="blogs-header">
+            <div class="container">
+                <h1>Blogs</h1>
+                <p>Expert advice, industry trends, and insights for healthcare professionals.</p>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="product-cta-section">
-        <div class="bg-ellipse product-cta-ellipse-1"></div>
-        <div class="bg-ellipse product-cta-ellipse-2"></div>
-        <div class="container product-cta-container">
-            <h2 class="product-cta-title">Need something specific?</h2>
-            <p class="product-cta-desc">Contact us with your requirements and we will help you find the right products.
-            </p>
-            <a href="contact.html" class="request-quote-btn">
-                Request Quote
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
+        <!-- Filter Tags -->
+        <div class="blog-filters-section">
+            <div class="container">
+                <div class="filter-tags">
+                    <button class="filter-tag active">All</button>
+                    <button class="filter-tag">Innovation</button>
+                    <button class="filter-tag">Quality</button>
+                    <button class="filter-tag">Safety</button>
+                    <button class="filter-tag">Technology</button>
+                    <button class="filter-tag">Supply Chain</button>
+                    <button class="filter-tag">Healthcare</button>
+                    <button class="filter-tag">Products</button>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <!-- Featured Blog -->
+        <div class="featured-blog-section">
+            <div class="container">
+                <div class="featured-blog-card" onclick="window.location.href='blog-detail.html?id=1'"
+                    style="cursor: pointer;">
+                    <div class="featured-blog-image">
+                        <img src="http://localhost:3845/assets/918a71bbcb05a59e97a9115d3dcb6da22230b5cb.png"
+                            alt="Featured Blog">
+                    </div>
+                    <div class="featured-blog-content">
+                        <span class="blog-category">Technology</span>
+                        <h2>The Future of Healthcare Technology: Trends to Watch in 2025</h2>
+                        <p>Explore the breakthrough innovations poised to transform patient care, from AI-driven
+                            diagnostics to remote monitoring...</p>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <span class="author-avatar">SC</span>
+                                <div class="author-details">
+                                    <span class="author-name">Dr. Sarah Connor</span>
+                                    <span class="author-role">Chief Technology Officer</span>
+                                </div>
+                            </div>
+                            <div class="blog-date">
+                                <span><i class="far fa-calendar"></i> Oct 24, 2024</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+
+                        </div>
+                        <a href="blog-detail.html?id=1" class="btn btn-primary read-more-btn">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid-section">
+            <div class="container">
+                <div class="blog-grid">
+                    <!-- Blog Card 1 -->
+                    <div class="blog-card" onclick="window.location.href='blog-detail.html?id=2'"
+                        style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="http://localhost:3845/assets/b562c0561889bd57dad866424512a555eaefd074.png"
+                                alt="Blog 1">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Safety</span>
+                            <h3>Understanding Sterilization Methods: What You Need to Know</h3>
+                            <p>Understanding sterilization results, effectiveness and why it matters when choosing
+                                medical supplies.</p>
+                            <div class="blog-meta-mini">
+                                <span class="author-mini"><span class="avatar-mini">JD</span> James Dean</span>
+                                <a href="blog-detail.html?id=2" class="read-more-link">Read More <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 2 -->
+                    <div class="blog-card" onclick="window.location.href='blog-detail.html?id=3'"
+                        style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="http://localhost:3845/assets/f486aaa1350e641f3d2c542e287d63f3bca1efcf.png"
+                                alt="Blog 2">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Quality</span>
+                            <h3>How to Ensure High-Quality Supplies for Your Clinic</h3>
+                            <p>A comprehensive guide to product standards and what to look for when stocking your
+                                medical facility.</p>
+                            <div class="blog-meta-mini">
+                                <span class="author-mini"><span class="avatar-mini">DL</span> Dr. Laura Huang</span>
+                                <a href="blog-detail.html?id=3" class="read-more-link">Read More <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 3 -->
+                    <div class="blog-card" onclick="window.location.href='blog-detail.html?id=4'"
+                        style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="http://localhost:3845/assets/99818544d207dada701341c2b58a5f5d682aeb31.png"
+                                alt="Blog 3">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Supply Chain</span>
+                            <h3>Optimizing Your Healthcare Supply Chain for Efficiency</h3>
+                            <p>Strategies for streamlining inventory, reducing waste, and ensuring timely delivery of
+                                critical supplies.</p>
+                            <div class="blog-meta-mini">
+                                <span class="author-mini"><span class="avatar-mini">MP</span> Mark Peterson</span>
+                                <a href="blog-detail.html?id=4" class="read-more-link">Read More <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 4 -->
+                    <div class="blog-card" onclick="window.location.href='blog-detail.html?id=5'"
+                        style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="http://localhost:3845/assets/cdd505cf70734ec4653b44cfbd573931c035937c.png"
+                                alt="Blog 4">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Innovation</span>
+                            <h3>Telehealth and Hybrid Healthcare Models</h3>
+                            <p>Learn how virtual checkups and hybrid care are reshaping the healthcare landscape.</p>
+                            <div class="blog-meta-mini">
+                                <span class="author-mini"><span class="avatar-mini">TJ</span> Tom Jenkins</span>
+                                <a href="blog-detail.html?id=5" class="read-more-link">Read More <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 5 -->
+                    <div class="blog-card" onclick="window.location.href='blog-detail.html?id=6'"
+                        style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="http://localhost:3845/assets/5e748e98535d3ebb4432c14c7a4f1e1b1006e057.png"
+                                alt="Blog 5">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Healthcare</span>
+                            <h3>Maintaing Medical Equipment: Essential Tips for Longevity</h3>
+                            <p>Proper maintenance protocols to ensure your medical equipment functions optimally for
+                                years to come.</p>
+                            <div class="blog-meta-mini">
+                                <span class="author-mini"><span class="avatar-mini">SW</span> Sarah Wilson</span>
+                                <a href="blog-detail.html?id=6" class="read-more-link">Read More <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 6 -->
+                    <div class="blog-card" onclick="window.location.href='blog-detail.html?id=7'"
+                        style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="http://localhost:3845/assets/34598bce3b55b44317f4f992a4b4005222092ccd.png"
+                                alt="Blog 6">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Healthcare</span>
+                            <h3>Maintaing Medical Equipment: Common Tips for Longevity</h3>
+                            <p>Critical device care protocols to ensure your medical equipment continues effectively for
+                                patient safety.</p>
+                            <div class="blog-meta-mini">
+                                <span class="author-mini"><span class="avatar-mini">AW</span> Alex Williams</span>
+                                <a href="blog-detail.html?id=7" class="read-more-link">Read More <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="load-more-container">
+                    <button class="btn btn-outline load-more-btn">View More +</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated with Healthcare Insights</h2>
+                    <p>Subscribe to our newsletter for the latest updates in healthcare technology and tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Id">
+                        <button type="submit" class="subscribe-btn">Subscribe <i
+                                class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="main-footer">
         <div class="container">

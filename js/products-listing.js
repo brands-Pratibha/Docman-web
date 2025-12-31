@@ -20,67 +20,232 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentProductButton = null;
 
-    // Dummy Data - 6 items matching my-list.js IDs generally
-    // Note: IDs in my-list.js are 1, 2, 3, 4. We should align them or handle mapping.
-    // Ideally, products-listing.js should pull from a central catalog, but for now we maintain the mock matching.
+    // Dummy Data - expanded products with categorySlug for filtering
     const products = [
+        // Pharmaceutical Products
         {
             id: 1,
-            category: "Diagnostic Equipment",
-            title: "Digital X-Ray Machine",
-            desc: "High-resolution digital X-ray system with advanced imaging.",
-            packaging: "Unit",
-            unit: "unit"
+            category: "Pharmaceutical Products",
+            categorySlug: "pharmaceutical-products",
+            title: "Amoxicillin 500mg",
+            desc: "Broad-spectrum antibiotic for bacterial infections.",
+            packaging: "Blister Pack",
+            unit: "pack"
         },
         {
             id: 2,
-            category: "Monitoring Equipment",
-            title: "Patient Monitoring System",
-            desc: "Advanced patient monitoring with real-time vitals tracking.",
-            packaging: "Unit",
-            unit: "units"
+            category: "Pharmaceutical Products",
+            categorySlug: "pharmaceutical-products",
+            title: "Metformin 850mg",
+            desc: "Oral diabetes medicine to control blood sugar levels.",
+            packaging: "Strip",
+            unit: "strip"
         },
         {
             id: 3,
-            category: "Patient Care",
+            category: "Pharmaceutical Products",
+            categorySlug: "pharmaceutical-products",
+            title: "Atorvastatin 20mg",
+            desc: "Statin medication for lowering cholesterol.",
+            packaging: "Blister Pack",
+            unit: "pack"
+        },
+        // Medical Disposables
+        {
+            id: 4,
+            category: "Medical Disposables",
+            categorySlug: "medical-disposables",
+            title: "Surgical Gloves",
+            desc: "Sterile latex surgical gloves for medical procedures.",
+            packaging: "Box (50 pairs)",
+            unit: "box"
+        },
+        {
+            id: 5,
+            category: "Medical Disposables",
+            categorySlug: "medical-disposables",
+            title: "Disposable Syringes 5ml",
+            desc: "Single-use syringes with needles for injections.",
+            packaging: "Box (100 units)",
+            unit: "box"
+        },
+        {
+            id: 6,
+            category: "Medical Disposables",
+            categorySlug: "medical-disposables",
+            title: "Face Masks N95",
+            desc: "High-filtration respiratory protection masks.",
+            packaging: "Box (20 units)",
+            unit: "box"
+        },
+        // Wound Care & Oncology
+        {
+            id: 7,
+            category: "Wound Care & Oncology",
+            categorySlug: "wound-care",
+            title: "Sterile Gauze Pads",
+            desc: "Absorbent cotton gauze for wound dressing.",
+            packaging: "Pack (100 units)",
+            unit: "pack"
+        },
+        {
+            id: 8,
+            category: "Wound Care & Oncology",
+            categorySlug: "wound-care",
+            title: "Elastic Bandage Roll",
+            desc: "Compression bandage for sprains and strains.",
+            packaging: "Roll",
+            unit: "roll"
+        },
+        {
+            id: 9,
+            category: "Wound Care & Oncology",
+            categorySlug: "wound-care",
+            title: "Adhesive Surgical Tape",
+            desc: "Medical tape for securing dressings and devices.",
+            packaging: "Roll",
+            unit: "roll"
+        },
+        // Hospital Equipment
+        {
+            id: 10,
+            category: "Hospital Equipment",
+            categorySlug: "hospital-equipment",
             title: "Hospital Bed - Electric",
             desc: "Fully electric hospital bed with adjustable positioning.",
             packaging: "Unit",
             unit: "unit"
         },
         {
-            id: 4,
+            id: 11,
+            category: "Hospital Equipment",
+            categorySlug: "hospital-equipment",
+            title: "Patient Wheelchair",
+            desc: "Foldable wheelchair for patient mobility.",
+            packaging: "Unit",
+            unit: "unit"
+        },
+        {
+            id: 12,
+            category: "Hospital Equipment",
+            categorySlug: "hospital-equipment",
+            title: "IV Stand - Stainless Steel",
+            desc: "Adjustable height IV pole with wheels.",
+            packaging: "Unit",
+            unit: "unit"
+        },
+        // Diagnostic Equipment
+        {
+            id: 13,
             category: "Diagnostic Equipment",
+            categorySlug: "diagnostic-equipment",
+            title: "Digital X-Ray Machine",
+            desc: "High-resolution digital X-ray system with advanced imaging.",
+            packaging: "Unit",
+            unit: "unit"
+        },
+        {
+            id: 14,
+            category: "Diagnostic Equipment",
+            categorySlug: "diagnostic-equipment",
             title: "Ultrasound Scanner",
             desc: "Portable ultrasound scanner with multiple probe options.",
             packaging: "Unit",
-            unit: "units"
+            unit: "unit"
         },
         {
-            id: 5,
-            category: "Pharmaceutical Products",
-            title: "Amoxicillin 500mg",
-            desc: "Broad-spectrum antibiotic.",
-            packaging: "Blister Pack",
-            unit: "pack"
+            id: 15,
+            category: "Diagnostic Equipment",
+            categorySlug: "diagnostic-equipment",
+            title: "ECG Machine",
+            desc: "12-lead electrocardiograph for cardiac monitoring.",
+            packaging: "Unit",
+            unit: "unit"
+        },
+        // Patient Care
+        {
+            id: 16,
+            category: "Patient Care",
+            categorySlug: "patient-care",
+            title: "Patient Monitoring System",
+            desc: "Advanced patient monitoring with real-time vitals tracking.",
+            packaging: "Unit",
+            unit: "unit"
         },
         {
-            id: 6,
-            category: "Medical Disposables",
-            title: "Surgical Gloves",
-            desc: "Sterile latex surgical gloves.",
-            packaging: "Box (50 pairs)",
-            unit: "box"
+            id: 17,
+            category: "Patient Care",
+            categorySlug: "patient-care",
+            title: "Pulse Oximeter",
+            desc: "Portable device for measuring blood oxygen saturation.",
+            packaging: "Unit",
+            unit: "unit"
+        },
+        {
+            id: 18,
+            category: "Patient Care",
+            categorySlug: "patient-care",
+            title: "Blood Pressure Monitor",
+            desc: "Digital automatic blood pressure measurement device.",
+            packaging: "Unit",
+            unit: "unit"
         }
     ];
+
+    // Get URL parameter helper function
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Update sidebar active state based on current category
+    function updateSidebarActiveState(categorySlug) {
+        const sidebarLinks = document.querySelectorAll('.sidebar-categories .category-item');
+        sidebarLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkCategory = link.getAttribute('data-category');
+            if (linkCategory === categorySlug || (!categorySlug && linkCategory === 'all')) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Get filtered products based on category
+    function getFilteredProducts(categorySlug) {
+        if (!categorySlug || categorySlug === 'all') {
+            return products;
+        }
+        return products.filter(product => product.categorySlug === categorySlug);
+    }
 
     // Render Function (No Images)
     function renderProducts() {
         // Only if we are on the products-listing page
         if (!productsContainer) return;
 
+        // Get category from URL parameter
+        const categorySlug = getUrlParameter('category');
+
+        // Update sidebar active state
+        updateSidebarActiveState(categorySlug);
+
+        // Get filtered products
+        const filteredProducts = getFilteredProducts(categorySlug);
+
         productsContainer.innerHTML = '';
-        products.forEach(product => {
+
+        // Show message if no products found
+        if (filteredProducts.length === 0) {
+            productsContainer.innerHTML = `
+                <div class="no-products-message">
+                    <i class="fa-solid fa-box-open"></i>
+                    <p>No products found in this category.</p>
+                </div>
+            `;
+            return;
+        }
+
+        filteredProducts.forEach(product => {
             const card = document.createElement('div');
             card.className = 'product-card';
 

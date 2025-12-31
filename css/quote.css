@@ -1,7 +1,7 @@
 /* Quote Page Styles */
 
 .quote-page-main {
-    background: #E7F5F4;
+    background: linear-gradient(106deg, #E7F5F4 4.3%, #FFFFFF 106.7%);
     /* Light teal background from Figma */
     min-height: 80vh;
     padding: 60px 0 100px;
