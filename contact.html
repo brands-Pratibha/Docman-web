@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -66,17 +66,18 @@
                 </div>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
-                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                        <li><a href="solutions.html" data-i18n="nav_solutions">Solutions</a></li>
+                        <li><a href="blogs.html" data-i18n="nav_blogs">Blogs</a></li>
+                        <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="nav-actions">
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search products...">
+                        <input type="text" class="search-input" data-i18n-placeholder="search_placeholder"
+                            placeholder="Search products...">
                         <button class="icon-btn search-btn" aria-label="Search">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +121,7 @@
                                 d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z"
                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span>My List</span>
+                        <span data-i18n="nav_my_list">My List</span>
                     </a>
                 </div>
             </div>
@@ -134,8 +135,9 @@
         <div class="bg-ellipse contact-ellipse-3"></div>
         <div class="container contact-hero-container">
             <div class="contact-hero-content">
-                <h1>Get in Touch</h1>
-                <p>Have questions about our products or services? We're here to help. Fill out the form and our team
+                <h1 data-i18n="contact_hero_title">Get in Touch</h1>
+                <p data-i18n="contact_hero_desc">Have questions about our products or services? We're here to help. Fill
+                    out the form and our team
                     will get back to you within 24 hours.</p>
             </div>
         </div>
@@ -157,7 +159,7 @@
                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h4 class="card-title">Address</h4>
+                    <h4 class="card-title" data-i18n="contact_address">Address</h4>
                     <p class="card-details">Skipper corner, 308, 88, Nehru Place<br>New Delhi, 110019 India</p>
                 </div>
 
@@ -170,7 +172,7 @@
                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h4 class="card-title">Phone</h4>
+                    <h4 class="card-title" data-i18n="contact_phone">Phone</h4>
                     <p class="card-details">+91 98730 77622</p>
                 </div>
 
@@ -185,7 +187,7 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h4 class="card-title">Email</h4>
+                    <h4 class="card-title" data-i18n="contact_email">Email</h4>
                     <p class="card-details">info@docmanlabs.com</p>
                 </div>
 
@@ -199,7 +201,7 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h4 class="card-title">Business Hours</h4>
+                    <h4 class="card-title" data-i18n="contact_hours">Business Hours</h4>
                     <p class="card-details">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
                 </div>
             </div>
@@ -213,31 +215,36 @@
         <div class="container contact-container">
             <div class="contact-form-wrapper">
                 <div class="contact-form-card">
-                    <h2>Send us a message</h2>
+                    <h2 data-i18n="contact_form_title">Send us a message</h2>
                     <form id="contactForm" class="contact-form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="firstName">First Name <span class="required">*</span></label>
-                                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name"
+                                <label for="firstName"><span data-i18n="form_first_name">First Name</span> <span
+                                        class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName"
+                                    data-i18n-placeholder="placeholder_first_name" placeholder="Enter your first name"
                                     required>
                                 <span class="error-message" id="firstName-error"></span>
                             </div>
                             <div class="form-group">
-                                <label for="lastName">Last Name <span class="required">*</span></label>
-                                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name"
+                                <label for="lastName"><span data-i18n="form_last_name">Last Name</span> <span
+                                        class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName"
+                                    data-i18n-placeholder="placeholder_last_name" placeholder="Enter your last name"
                                     required>
                                 <span class="error-message" id="lastName-error"></span>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email address"
-                                    required>
+                                <label for="email"><span data-i18n="form_email">Email Address</span> <span
+                                        class="required">*</span></label>
+                                <input type="email" id="email" name="email" data-i18n-placeholder="placeholder_email"
+                                    placeholder="Enter your email address" required>
                                 <span class="error-message" id="email-error"></span>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
+                                <label for="phone" data-i18n="form_phone">Phone Number</label>
                                 <div class="phone-input-group">
                                     <select id="country-code" name="country-code" class="country-select">
                                         <option value="+93">+93 Afghanistan</option>
@@ -715,8 +722,9 @@
                             </datalist>
                         </div>
                         <div class="form-group full-width">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" placeholder="Enter your company name">
+                            <label for="company" data-i18n="form_company">Company Name</label>
+                            <input type="text" id="company" name="company" data-i18n-placeholder="placeholder_company"
+                                placeholder="Enter your company name">
                             <span class="error-message" id="company-error"></span>
                         </div>
                         <div class="form-group full-width">
@@ -733,14 +741,15 @@
                             <span class="error-message" id="subject-error"></span>
                         </div>
                         <div class="form-group full-width">
-                            <label for="message">Message <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="5" placeholder="Enter your message"
-                                required></textarea>
+                            <label for="message"><span data-i18n="form_message">Message</span> <span
+                                    class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" data-i18n-placeholder="placeholder_message"
+                                placeholder="Enter your message" required></textarea>
                             <span class="error-message" id="message-error"></span>
                         </div>
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary submit-btn">
-                                Send Message
+                                <span data-i18n="btn_send_message">Send Message</span>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -758,7 +767,7 @@
                 <!-- Map Section -->
                 <div class="contact-map-section">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.743242207238!2d77.25265531508216!3d28.54894378245084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3c4c5555555%3A0x1234567890abcdef!2sSkipper%20Corner%2C%2088%2C%20Nehru%20Place%2C%20New%20Delhi%2C%20Delhi%20110019!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                        src="https://maps.google.com/maps?q=Docman+Laboratories%2C+Skipper+Corner%2C+308%2C+88%2C+Nehru+Place%2C+New+Delhi%2C+Delhi+110019&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade" class="contact-map-iframe">
                     </iframe>
@@ -766,8 +775,9 @@
 
                 <!-- Need Immediate Assistance Box -->
                 <div class="immediate-assistance-box">
-                    <h4>Need Immediate Assistance?</h4>
-                    <p>Our support team is available to help you with urgent inquiries.</p>
+                    <h4 data-i18n="contact_immediate">Need Immediate Assistance?</h4>
+                    <p data-i18n="contact_immediate_desc">Our support team is available to help you with urgent
+                        inquiries.</p>
 
                     <div class="assistance-contact-items">
                         <div class="assistance-contact-item">
@@ -781,7 +791,7 @@
                                 </svg>
                             </div>
                             <div class="assistance-text">
-                                <span class="assistance-label">Emergency Hotline</span>
+                                <span class="assistance-label" data-i18n="contact_hotline">Emergency Hotline</span>
                                 <span class="assistance-value">+91 98730 77622</span>
                             </div>
                         </div>
@@ -799,7 +809,7 @@
                                 </svg>
                             </div>
                             <div class="assistance-text">
-                                <span class="assistance-label">Support Email</span>
+                                <span class="assistance-label" data-i18n="contact_support_email">Support Email</span>
                                 <span class="assistance-value">info@docmanlabs.com</span>
                             </div>
                         </div>
@@ -853,49 +863,51 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Products</h4>
+                    <h4 data-i18n="footer_products">Products</h4>
                     <ul>
-                        <li><a href="products.html">Pharmaceuticals</a></li>
-                        <li><a href="products.html">Medical Disposables</a></li>
-                        <li><a href="products.html">Wound Care</a></li>
-                        <li><a href="products.html">Hospital Equipment</a></li>
+                        <li><a href="products.html" data-i18n="footer_pharma">Pharmaceuticals</a></li>
+                        <li><a href="products.html" data-i18n="footer_disposables">Medical Disposables</a></li>
+                        <li><a href="products.html" data-i18n="footer_wound">Wound Care</a></li>
+                        <li><a href="products.html" data-i18n="footer_equipment">Hospital Equipment</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Solutions</h4>
+                    <h4 data-i18n="footer_solutions">Solutions</h4>
                     <ul>
-                        <li><a href="solutions.html">For Hospitals</a></li>
-                        <li><a href="solutions.html">For Laboratories</a></li>
-                        <li><a href="solutions.html">Pharma Companies</a></li>
-                        <li><a href="solutions.html">Export Solutions</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_hospitals">For Hospitals</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_labs">For Laboratories</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_pharma_co">Pharma Companies</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_export">Export Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Resources</h4>
+                    <h4 data-i18n="footer_resources">Resources</h4>
                     <ul>
-                        <li><a href="about.html#quality">Certifications</a></li>
-                        <li><a href="about.html#quality">Quality Assurance</a></li>
-                        <li><a href="products.html">Product Catalog</a></li>
-                        <li><a href="blogs.html">Latest News</a></li>
+                        <li><a href="about.html#quality" data-i18n="footer_cert">Certifications</a></li>
+                        <li><a href="about.html#quality" data-i18n="footer_qa">Quality Assurance</a></li>
+                        <li><a href="products.html" data-i18n="footer_catalog">Product Catalog</a></li>
+                        <li><a href="blogs.html" data-i18n="footer_news">Latest News</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer_company">Company</h4>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="index.html#presence">Global Presence</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+                        <li><a href="faq.html" data-i18n="footer_faq">FAQ</a></li>
+                        <li><a href="index.html#presence" data-i18n="footer_presence">Global Presence</a></li>
+                        <li><a href="contact.html" data-i18n="footer_contact" data-i18n="btn_contact_us">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 Docman Laboratories. All rights reserved.</p>
+                <p class="footer-copyright">Â<span data-i18n="footer_copyright">© 2025 Docman Laboratories. All rights
+                        reserved.</span></p>
                 <div class="footer-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                    <a href="disclaimer.html">Disclaimer</a>
-                    <a href="payment-options.html">Payment Options</a>
+                    <a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+                    <a href="terms-of-service.html" data-i18n="footer_terms">Terms of Service</a>
+                    <a href="disclaimer.html" data-i18n="footer_disclaimer">Disclaimer</a>
+                    <a href="payment-options.html" data-i18n="footer_payment">Payment Options</a>
                 </div>
                 <div class="footer-social">
                     <a href="#" class="social-icon-link" aria-label="LinkedIn">
@@ -942,6 +954,7 @@
 
     <script src="js/product-data.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
 </body>

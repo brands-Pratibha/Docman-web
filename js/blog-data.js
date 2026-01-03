@@ -7,7 +7,7 @@ const blogPosts = [
         role: "Chief Technology Officer",
         date: "Oct 24, 2024",
         readTime: "8 min read",
-        image: "http://localhost:3845/assets/918a71bbcb05a59e97a9115d3dcb6da22230b5cb.png",
+        image: "assets/blog_tech_future.png",
         content: `
             <h2>Introduction</h2>
             <p>The healthcare industry is on the brink of a major transformation. As we approach 2025, technological advancements are set to redefine how patient care is delivered, monitored, and managed. From AI-driven diagnostics to <a href="solutions.html">advanced healthcare solutions</a>, the future looks promising. At Docman Labs, we are committed to staying ahead of these curves to provide you with the latest in medical innovation.</p>
@@ -33,7 +33,7 @@ const blogPosts = [
         role: "Safety Compliance Officer",
         date: "Oct 20, 2024",
         readTime: "7 min read",
-        image: "http://localhost:3845/assets/b562c0561889bd57dad866424512a555eaefd074.png",
+        image: "assets/blog_safety_sterilization.png",
         content: `
             <h2>The Importance of Sterilization</h2>
             <p>Sterilization is a critical process in healthcare settings, ensuring that <a href="products.html">medical devices and equipment</a> are free from viable microorganisms. Ineffective sterilization can lead to healthcare-associated infections (HAIs), posing severe risks to patient safety. Understanding the nuances of each method is vital for any procurement officer or medical professional.</p>
@@ -60,7 +60,7 @@ const blogPosts = [
         role: "Quality Assurance Manager",
         date: "Oct 18, 2024",
         readTime: "6 min read",
-        image: "http://localhost:3845/assets/f486aaa1350e641f3d2c542e287d63f3bca1efcf.png",
+        image: "assets/blog_quality_supplies.png",
         content: `
             <h2>Evaluating Suppliers</h2>
             <p>The foundation of a high-quality clinic lies in the reliability of its supplies. When choosing a supplier, look for certifications such as <a href="about.html">ISO 9001:2015 and GDP</a>, which indicate adherence to international quality standards for medical devices. At Docman Labs, we pride ourselves on meeting these rigorous global benchmarks.</p>
@@ -83,7 +83,7 @@ const blogPosts = [
         role: "Logistics Director",
         date: "Oct 15, 2024",
         readTime: "9 min read",
-        image: "http://localhost:3845/assets/99818544d207dada701341c2b58a5f5d682aeb31.png",
+        image: "assets/blog_supply_chain.png",
         content: `
             <h2>The Challenge of Supply Chain Management</h2>
             <p>Healthcare supply chains are complex, involving numerous stakeholders and strict regulatory requirements. Inefficiencies can lead to stockouts of critical medicines or wastage of perishable items like <a href="products.html">wound care products</a>. Managing this balance is key to operational success.</p>
@@ -106,7 +106,7 @@ const blogPosts = [
         role: "Digital Health Specialist",
         date: "Oct 12, 2024",
         readTime: "5 min read",
-        image: "http://localhost:3845/assets/cdd505cf70734ec4653b44cfbd573931c035937c.png",
+        image: "assets/blog_telehealth.png",
         content: `
             <h2>The Evolution of Care Delivery</h2>
             <p>Telehealth has rapidly evolved from a niche service to a standard component of healthcare delivery. It offers convenience for patients and expands reach for providers. This shift requires not just digital tools, but also the right physical infrastructure and <a href="products.html">medical disposables</a> for home-care kits.</p>
@@ -129,7 +129,7 @@ const blogPosts = [
         role: "Biomedical Engineer",
         date: "Oct 10, 2024",
         readTime: "6 min read",
-        image: "http://localhost:3845/assets/5e748e98535d3ebb4432c14c7a4f1e1b1006e057.png",
+        image: "assets/blog_maintenance.png",
         content: `
             <h2>Preventive Maintenance</h2>
             <p>Regular preventive maintenance is the most effective way to extend the life of <a href="products.html">medical equipment</a>. Scheduled inspections allow for the early detection of wear and tear, preventing costly breakdowns that can disrupt patient care.</p>
@@ -152,7 +152,7 @@ const blogPosts = [
         role: "Clinic Manager",
         date: "Oct 05, 2024",
         readTime: "5 min read",
-        image: "http://localhost:3845/assets/34598bce3b55b44317f4f992a4b4005222092ccd.png",
+        image: "assets/blog_maintenance_2.png",
         content: `
             <h2>Daily Checks</h2>
             <p>Simple daily checks can prevent major issues. Ensure cords are intact, batteries are charged, and devices are stored properly after use. Small habits like these significantly prolong the lifespan of expensive <a href="products.html">healthcare assets</a>.</p>

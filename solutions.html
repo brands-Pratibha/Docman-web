@@ -67,17 +67,18 @@
                 </div>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="solutions.html" class="active">Solutions</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                        <li><a href="solutions.html" class="active" data-i18n="nav_solutions">Solutions</a></li>
+                        <li><a href="blogs.html" data-i18n="nav_blogs">Blogs</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="nav-actions">
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search products...">
+                        <input type="text" class="search-input" data-i18n-placeholder="search_placeholder"
+                            placeholder="Search products...">
                         <button class="icon-btn search-btn" aria-label="Search">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -121,7 +122,7 @@
                                 d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z"
                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span>My List</span>
+                        <span data-i18n="nav_my_list">My List</span>
                     </a>
                 </div>
             </div>
@@ -131,8 +132,8 @@
     <!-- Page Header & Solutions Grid Combined -->
     <section class="solutions-hero-wrapper">
         <div class="container hero-content-inner">
-            <span class="badge-pill">Solutions</span>
-            <h1>Healthcare Solutions</h1>
+            <span class="badge-pill" data-i18n="nav_solutions">Solutions</span>
+            <h1 data-i18n="solutions_hero_title">Healthcare Solutions</h1>
         </div>
 
         <div class="container solutions-grid-container">
@@ -142,17 +143,24 @@
                     <div class="card-icon-wrapper hospital-icon">
                         <i class="fa-regular fa-hospital"></i>
                     </div>
-                    <h3>For Hospitals</h3>
-                    <p>Supply management solutions for large healthcare facilities, ensuring you have everything you
+                    <h3 data-i18n="sol_hospitals">For Hospitals</h3>
+                    <p data-i18n="sol_hospitals_full_desc">Supply management solutions for large healthcare facilities,
+                        ensuring you have everything you
                         need, when you need it.</p>
                     <ul class="feature-list">
-                        <li><i class="fa-solid fa-check-circle"></i> Bulk ordering and volume discounts</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Just-in-time inventory management</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Dedicated account management</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Emergency supply protocols</li>
-                        <li><i class="fa-solid fa-check-circle"></i> 24/7 ordering and support</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_hosp_feat1">Bulk ordering and
+                                volume discounts</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_hosp_feat2">Just-in-time
+                                inventory management</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_hosp_feat3">Dedicated account
+                                management</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_hosp_feat4">Emergency supply
+                                protocols</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_hosp_feat5">24/7 ordering and
+                                support</span></li>
                     </ul>
-                    <a href="#" class="btn btn-primary solution-btn">Request Hospital Solution</a>
+                    <a href="#" class="btn btn-primary solution-btn" data-i18n="btn_request_hospital">Request Hospital
+                        Solution</a>
                 </div>
 
                 <!-- Card 2: Clinics -->
@@ -160,17 +168,24 @@
                     <div class="card-icon-wrapper clinic-icon">
                         <i class="fa-solid fa-user-doctor"></i>
                     </div>
-                    <h3>For Clinics</h3>
-                    <p>Flexible ordering and delivery options tailored for clinics and medical practices of all sizes.
+                    <h3 data-i18n="sol_clinics">For Clinics</h3>
+                    <p data-i18n="sol_clinics_full_desc">Flexible ordering and delivery options tailored for clinics and
+                        medical practices of all sizes.
                     </p>
                     <ul class="feature-list">
-                        <li><i class="fa-solid fa-check-circle"></i> Flexible order quantities</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Weekly or monthly delivery schedules</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Online ordering portal</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Automated reordering systems</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Competitive pricing for small orders</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_clinic_feat1">Flexible order
+                                quantities</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_clinic_feat2">Weekly or
+                                monthly delivery schedules</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_clinic_feat3">Online ordering
+                                portal</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_clinic_feat4">Automated
+                                reordering systems</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_clinic_feat5">Competitive
+                                pricing for small orders</span></li>
                     </ul>
-                    <a href="#" class="btn btn-primary solution-btn">Request Clinic Solution</a>
+                    <a href="#" class="btn btn-primary solution-btn" data-i18n="btn_request_clinic">Request Clinic
+                        Solution</a>
                 </div>
 
                 <!-- Card 3: Private Corporates -->
@@ -178,16 +193,23 @@
                     <div class="card-icon-wrapper corporate-icon">
                         <i class="fa-solid fa-ribbon"></i>
                     </div>
-                    <h3>For Private Corporates</h3>
-                    <p>Specialized medical equipment and supplies for corporate healthcare initiatives.</p>
+                    <h3 data-i18n="sol_corporate">For Private Corporates</h3>
+                    <p data-i18n="sol_corporate_full_desc">Specialized medical equipment and supplies for corporate
+                        healthcare initiatives.</p>
                     <ul class="feature-list">
-                        <li><i class="fa-solid fa-check-circle"></i> Workplace health equipment</li>
-                        <li><i class="fa-solid fa-check-circle"></i> First aid and emergency supplies</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Customized health packages</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Training and consultation services</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Compliance and regulatory support</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_corp_feat1">Workplace health
+                                equipment</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_corp_feat2">First aid and
+                                emergency supplies</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_corp_feat3">Customized health
+                                packages</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_corp_feat4">Training and
+                                consultation services</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_corp_feat5">Compliance and
+                                regulatory support</span></li>
                     </ul>
-                    <a href="#" class="btn btn-primary solution-btn">Request Corporate Solution</a>
+                    <a href="#" class="btn btn-primary solution-btn" data-i18n="btn_request_corporate">Request Corporate
+                        Solution</a>
                 </div>
 
                 <!-- Card 4: Global Solutions -->
@@ -195,17 +217,24 @@
                     <div class="card-icon-wrapper global-icon">
                         <i class="fa-solid fa-globe"></i>
                     </div>
-                    <h3>Global Solutions</h3>
-                    <p>International healthcare supply chain solutions with worldwide shipping and local support
+                    <h3 data-i18n="sol_global">Global Solutions</h3>
+                    <p data-i18n="sol_global_full_desc">International healthcare supply chain solutions with worldwide
+                        shipping and local support
                         capabilities.</p>
                     <ul class="feature-list">
-                        <li><i class="fa-solid fa-check-circle"></i> International shipping to 40+ countries</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Local distribution centers</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Multi-language customer support</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Import/export documentation assistance</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Currency and payment flexibility</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_global_feat1">International
+                                shipping to 40+ countries</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_global_feat2">Local
+                                distribution centers</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_global_feat3">Multi-language
+                                customer support</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_global_feat4">Import/export
+                                documentation assistance</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-i18n="sol_global_feat5">Currency and
+                                payment flexibility</span></li>
                     </ul>
-                    <a href="#" class="btn btn-primary solution-btn">Request Global Solution</a>
+                    <a href="#" class="btn btn-primary solution-btn" data-i18n="btn_request_global">Request Global
+                        Solution</a>
                 </div>
             </div>
         </div>
@@ -219,31 +248,33 @@
     <section class="custom-solution-section">
         <div class="container">
             <div class="custom-solution-heading">
-                <h2>Need a Custom Solution?</h2>
-                <p>Every healthcare facility has unique requirements. Our team of experts will work with you to create a
+                <h2 data-i18n="solutions_custom_title">Need a Custom Solution?</h2>
+                <p data-i18n="solutions_custom_desc">Every healthcare facility has unique requirements. Our team of
+                    experts will work with you to create a
                     tailored solution that meets your specific needs.</p>
             </div>
 
             <div class="process-steps">
                 <div class="step-card">
                     <div class="step-circle">1</div>
-                    <h4>Consultation</h4>
-                    <p>We understand your requirements</p>
+                    <h4 data-i18n="sol_step1_title">Consultation</h4>
+                    <p data-i18n="sol_step1_desc">We understand your requirements</p>
                 </div>
                 <div class="step-card">
                     <div class="step-circle">2</div>
-                    <h4>Proposal</h4>
-                    <p>Custom solution designed for you</p>
+                    <h4 data-i18n="sol_step2_title">Proposal</h4>
+                    <p data-i18n="sol_step2_desc">Custom solution designed for you</p>
                 </div>
                 <div class="step-card">
                     <div class="step-circle">3</div>
-                    <h4>Implementation</h4>
-                    <p>Seamless deployment and support</p>
+                    <h4 data-i18n="sol_step3_title">Implementation</h4>
+                    <p data-i18n="sol_step3_desc">Seamless deployment and support</p>
                 </div>
             </div>
 
             <div class="custom-solution-cta">
-                <a href="contact.html" class="btn btn-primary">Contact Our Solutions Team</a>
+                <a href="contact.html" class="btn btn-primary" data-i18n="btn_contact_team">Contact Our Solutions
+                    Team</a>
             </div>
         </div>
         <!-- Decorative bg elements -->
@@ -264,32 +295,32 @@
                     <div class="trust-icon-circle">
                         <img src="assets/trust_track_record.png" alt="Proven Track Record">
                     </div>
-                    <h3>Proven Track Record</h3>
-                    <p>60+ years of healthcare supply expertise</p>
+                    <h3 data-i18n="sol_trust_track">Proven Track Record</h3>
+                    <p data-i18n="sol_trust_track_desc">60+ years of healthcare supply expertise</p>
                 </div>
                 <!-- Item 2 -->
                 <div class="trust-item">
                     <div class="trust-icon-circle">
                         <img src="assets/trust_quality.png" alt="Certified Quality">
                     </div>
-                    <h3>Certified Quality</h3>
-                    <p>All products meet international standards</p>
+                    <h3 data-i18n="sol_trust_quality">Certified Quality</h3>
+                    <p data-i18n="sol_trust_quality_desc">All products meet international standards</p>
                 </div>
                 <!-- Item 3 -->
                 <div class="trust-item">
                     <div class="trust-icon-circle">
                         <img src="assets/trust_support.png" alt="Dedicated Support">
                     </div>
-                    <h3>Dedicated Support</h3>
-                    <p>24/7 customer service and technical support</p>
+                    <h3 data-i18n="sol_trust_support">Dedicated Support</h3>
+                    <p data-i18n="sol_trust_support_desc">24/7 customer service and technical support</p>
                 </div>
                 <!-- Item 4 -->
                 <div class="trust-item">
                     <div class="trust-icon-circle">
                         <img src="assets/trust_global.png" alt="Global Reach">
                     </div>
-                    <h3>Global Reach</h3>
-                    <p>Serving healthcare facilities worldwide</p>
+                    <h3 data-i18n="sol_trust_global">Global Reach</h3>
+                    <p data-i18n="sol_trust_global_desc">Serving healthcare facilities worldwide</p>
                 </div>
             </div>
         </div>
@@ -426,6 +457,7 @@
 
     <script src="js/product-data.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 

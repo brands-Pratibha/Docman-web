@@ -86,10 +86,33 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         let title = 'All Products';
+
+        // Base English Names
         if (categorySlug && categoryNames[categorySlug]) {
             title = categoryNames[categorySlug];
+
+            // Attempt Translation
+            const currentLang = localStorage.getItem('selectedLanguage') || 'EN';
+            if (currentLang !== 'EN' && typeof getTranslatedProduct === 'function') {
+                const dummy = { categorySlug: categorySlug, subcategorySlug: subcategorySlug };
+                const trans = getTranslatedProduct(dummy, currentLang);
+
+                // If translation found (and different from dummy which has undefined props?), getTranslatedProduct returns keys if properties missing? 
+                // No, it checks product.categorySlug.
+                // It sets p.category if map found.
+                if (trans.category) title = trans.category;
+            }
+
             if (subcategorySlug && subcategoryNames[subcategorySlug]) {
-                title += ' - ' + subcategoryNames[subcategorySlug];
+                let subTitle = subcategoryNames[subcategorySlug];
+                // Translate Subcategory
+                const currentLang = localStorage.getItem('selectedLanguage') || 'EN';
+                if (currentLang !== 'EN' && typeof getTranslatedProduct === 'function') {
+                    const dummy = { categorySlug: categorySlug, subcategorySlug: subcategorySlug };
+                    const trans = getTranslatedProduct(dummy, currentLang);
+                    if (trans.subcategory) subTitle = trans.subcategory;
+                }
+                title += ' - ' + subTitle;
             }
         }
 
@@ -156,21 +179,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         filteredProducts.forEach(product => {
+            // Translate Product Data
+            const currentLang = localStorage.getItem('selectedLanguage') || 'EN';
+            let displayProduct = product;
+            if (typeof getTranslatedProduct === 'function') {
+                displayProduct = getTranslatedProduct(product, currentLang);
+            }
+
             const card = document.createElement('div');
             card.className = 'product-card';
 
             // Add subcategory info if available
-            const subcategoryInfo = product.subcategory ? `<span class="card-subcategory">${product.subcategory}</span>` : '';
+            const subcategoryInfo = displayProduct.subcategory ? `<span class="card-subcategory">${displayProduct.subcategory}</span>` : '';
 
             const contentHtml = `
                 <div class="card-details">
-                    <span class="card-category">${product.category}</span>
+                    <span class="card-category">${displayProduct.category}</span>
                     ${subcategoryInfo}
-                    <h3 class="card-title">${product.title}</h3>
-                    <p class="card-desc">${product.desc}</p>
+                    <h3 class="card-title">${displayProduct.title}</h3>
+                    <p class="card-desc">${displayProduct.desc}</p>
                 </div>
-                <!-- Pass packaging data attribute -->
-                <button class="add-btn" data-id="${product.id}" data-title="${product.title}" data-cat="${product.category}" data-pkg="${product.packaging}" data-unit="${product.unit}">
+                <!-- Pass packaging data attribute (Original English values for modal logic often preferred, but let's pass translated if needed? 
+                     Actually modal likely needs consistent internal values, but display needs translation. 
+                     For now keeping simple: display is translated. Data attributes? 
+                     Modal Title/Cat will be taken from data attributes. So they WILL be translated in modal too! Perfect.) -->
+                <button class="add-btn" data-id="${displayProduct.id}" data-title="${displayProduct.title}" data-cat="${displayProduct.category}" data-pkg="${displayProduct.packaging}" data-unit="${displayProduct.unit}">
                     <i class="fa-solid fa-plus"></i> Add to List
                 </button>
             `;
@@ -348,6 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateQuickView() {
         if (!qvSidebar) return;
 
+        const currentLang = localStorage.getItem('selectedLanguage') || 'EN';
+
         // Update Header Subtitle (Total Items)
         const totalItems = listItems.length;
         // Find or create subtitle in header
@@ -383,14 +418,27 @@ document.addEventListener('DOMContentLoaded', () => {
         qvBody.innerHTML = '';
 
         listItems.forEach(item => {
+            let displayTitle = item.title;
+            let displayCat = item.category;
+
+            // Attempt to translate using global data if available
+            if (typeof PRODUCT_DATA !== 'undefined' && typeof getTranslatedProduct === 'function') {
+                const originalProduct = PRODUCT_DATA.find(p => p.id === item.id);
+                if (originalProduct) {
+                    const translated = getTranslatedProduct(originalProduct, currentLang);
+                    displayTitle = translated.title;
+                    displayCat = translated.category;
+                }
+            }
+
             const itemEl = document.createElement('div');
             itemEl.className = 'qv-item';
 
             // Text Only Content (No Image)
             itemEl.innerHTML = `
                 <div class="qv-item-details">
-                    <div class="qv-item-cat">${item.category}</div>
-                    <div class="qv-item-title">${item.title}</div>
+                    <div class="qv-item-cat">${displayCat}</div>
+                    <div class="qv-item-title">${displayTitle}</div>
                     <div class="qv-item-pkg">Packaging: ${item.packaging || 'N/A'}</div>
                     
                     <div class="qv-item-actions">
@@ -492,4 +540,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (listItems.length > 0) {
         updateQuickView();
     }
+
+    // Listen for Language Changes handled by main.js
+    window.addEventListener('languageChanged', (e) => {
+        // e.detail.language contains the new language
+        renderProducts();
+
+        // Also update title
+        const categorySlug = getUrlParameter('category');
+        const subcategorySlug = getUrlParameter('subcategory');
+        updatePageTitle(categorySlug, subcategorySlug);
+    });
 });

@@ -369,6 +369,11 @@ body {
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
+.my-list-btn:hover svg path {
+    fill: #ffffff;
+    transition: fill 0.2s ease;
+}
+
 
 /* Hero Section */
 .hero-section {

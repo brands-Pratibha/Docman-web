@@ -13,11 +13,93 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Language Selector Interactivity
+    // Language Selector & Translation Logic
     const langSelector = document.querySelector('.lang-selector');
     const langContainer = document.querySelector('.lang-container');
     const langOptions = document.querySelectorAll('.lang-dropdown li');
     const currentLangSpan = document.querySelector('.lang-selector span');
+
+    // Global translation function for use in other scripts
+    window.getTranslation = function (key, lang) {
+        if (typeof TRANSLATIONS === 'undefined') return key;
+        const currentLang = lang || localStorage.getItem('selectedLanguage') || 'EN';
+        return (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) || key;
+    };
+
+    // Get current language
+    window.getCurrentLanguage = function () {
+        return localStorage.getItem('selectedLanguage') || 'EN';
+    };
+
+    function applyLanguage(lang) {
+        if (typeof TRANSLATIONS === 'undefined') {
+            console.warn('TRANSLATIONS not found');
+            return;
+        }
+        if (!TRANSLATIONS[lang]) lang = 'EN';
+
+        // Update selector UI
+        if (currentLangSpan) currentLangSpan.textContent = lang;
+
+        // Save preference
+        localStorage.setItem('selectedLanguage', lang);
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang.toLowerCase();
+
+        // Update text content using data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (TRANSLATIONS[lang][key]) {
+                el.innerHTML = TRANSLATIONS[lang][key];
+            }
+        });
+
+        // Update placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (TRANSLATIONS[lang][key]) {
+                el.placeholder = TRANSLATIONS[lang][key];
+            }
+        });
+
+        // Update title attributes
+        document.querySelectorAll('[data-i18n-title]').forEach(el => {
+            const key = el.getAttribute('data-i18n-title');
+            if (TRANSLATIONS[lang][key]) {
+                el.title = TRANSLATIONS[lang][key];
+            }
+        });
+
+        // Update aria-label attributes
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+            const key = el.getAttribute('data-i18n-aria');
+            if (TRANSLATIONS[lang][key]) {
+                el.setAttribute('aria-label', TRANSLATIONS[lang][key]);
+            }
+        });
+
+        // Update select option text
+        document.querySelectorAll('select[data-i18n-options]').forEach(select => {
+            const optionsMap = select.getAttribute('data-i18n-options');
+            if (optionsMap) {
+                try {
+                    const map = JSON.parse(optionsMap);
+                    select.querySelectorAll('option').forEach(option => {
+                        const key = map[option.value];
+                        if (key && TRANSLATIONS[lang][key]) {
+                            option.textContent = TRANSLATIONS[lang][key];
+                        }
+                    });
+                } catch (e) {
+                    console.warn('Invalid data-i18n-options format');
+                }
+            }
+        });
+
+        // Dispatch custom event for other scripts to react
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+    }
 
     if (langSelector && langContainer) {
         langSelector.addEventListener('click', (e) => {
@@ -27,14 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         langOptions.forEach(option => {
             option.addEventListener('click', () => {
-                const selectedLang = option.textContent;
-                if (currentLangSpan) {
-                    currentLangSpan.textContent = selectedLang;
-                }
+                const selectedLang = option.getAttribute('data-lang');
+                applyLanguage(selectedLang);
                 langContainer.classList.remove('active');
             });
         });
     }
+
+    // Initialize Language (always run even if selector not present)
+    const savedLang = localStorage.getItem('selectedLanguage') || 'EN';
+    applyLanguage(savedLang);
 
     // Scroll Reveal Animation
     const revealElements = document.querySelectorAll('section, .product-card, .solution-card, .quality-card');
@@ -189,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'quote.html';
             } else {
                 // Show toast notification
-                showToast('Your list is empty! Please add products to your list before requesting a quote.', 'warning');
+                showToast(window.getTranslation('msg_empty_list'), 'warning');
             }
         });
     }
@@ -207,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'quote.html';
             } else {
                 // Show toast notification
-                showToast('Your list is empty! Please add products to your list before requesting a quote.', 'warning');
+                showToast(window.getTranslation('msg_empty_list'), 'warning');
             }
         });
     }
@@ -247,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="toast-icon">${icon}</div>
             <div class="toast-content">
                 <p class="toast-message">${message}</p>
-                <a href="products-listing.html" class="toast-link">Browse Products →</a>
+                <a href="products-listing.html" class="toast-link">${window.getTranslation('msg_browse')}</a>
             </div>
             <button class="toast-close" aria-label="Close">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

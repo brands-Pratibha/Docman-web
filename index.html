@@ -66,17 +66,18 @@
                 </div>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
+                        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                        <li><a href="solutions.html" data-i18n="nav_solutions">Solutions</a></li>
+                        <li><a href="blogs.html" data-i18n="nav_blogs">Blogs</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="nav-actions">
                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search products...">
+                        <input type="text" class="search-input" data-i18n-placeholder="search_placeholder"
+                            placeholder="Search products...">
                         <button class="icon-btn search-btn" aria-label="Search">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +121,7 @@
                                 d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z"
                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span>My List</span>
+                        <span data-i18n="nav_my_list">My List</span>
                     </a>
                 </div>
             </div>
@@ -140,28 +141,28 @@
                         <span class="icon">🏆</span> GDP Certified
                     </span>
                 </div>
-                <h1>Global<br>Healthcare<br>Products Supplier</h1>
-                <p class="hero-description">
+                <h1 data-i18n="hero_title">Global<br>Healthcare<br>Products Supplier</h1>
+                <p class="hero-description" data-i18n="hero_desc">
                     Trusted ISO-certified manufacturer and distributor of pharmaceutical products, medical disposables,
                     and healthcare equipment since 1985. Serving hospitals, laboratories, and distributors across 40+
                     countries.
                 </p>
                 <div class="hero-actions">
-                    <a href="products.html" class="btn btn-primary">Browse Products →</a>
-                    <button class="btn btn-outline" id="hero-get-quote-btn">Request Quote</button>
+                    <a href="products.html" class="btn btn-primary" data-i18n="btn_browse">Browse Products →</a>
+                    <button class="btn btn-outline" id="hero-get-quote-btn" data-i18n="btn_quote">Request Quote</button>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <span class="stat-num">38+</span>
-                        <span class="stat-label">Years in Business</span>
+                        <span class="stat-label" data-i18n="stats_exp">Years in Business</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-num">40+</span>
-                        <span class="stat-label">Export Countries</span>
+                        <span class="stat-label" data-i18n="stats_export">Export Countries</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-num">5000+</span>
-                        <span class="stat-label">Products</span>
+                        <span class="stat-label" data-i18n="stats_products">Products</span>
                     </div>
                 </div>
             </div>
@@ -185,12 +186,13 @@
         </div>
         <div class="container partner-container">
             <div class="partner-content">
-                <h2>Trusted Healthcare Partner Since 1985</h2>
-                <p>With over four decades of experience, Docman Laboratories operates as a merchant trader and
+                <h2 data-i18n="header_trusted">Trusted Healthcare Partner Since 1985</h2>
+                <p data-i18n="header_trusted_desc">With over four decades of experience, Docman Laboratories operates as
+                    a merchant trader and
                     wholesaler, sourcing high-quality healthcare products that meet international standards. Our focus
                     is on long-term partnerships, regulatory compliance, and dependable supply chains.</p>
                 <a href="about.html" class="btn btn-outline learn-more-btn">
-                    Learn more
+                    <span data-i18n="btn_learn_more">Learn more</span>
                     <img src="assets/icon_arrow_figma.svg" alt="Arrow" class="btn-icon">
                 </a>
             </div>
@@ -215,19 +217,19 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">40+</span>
-                    <span class="stat-text">Years of Experience</span>
+                    <span class="stat-text" data-i18n="stats_years_exp">Years of Experience</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">5000+</span>
-                    <span class="stat-text">Healthcare Products</span>
+                    <span class="stat-text" data-i18n="stats_healthcare_products">Healthcare Products</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">40+</span>
-                    <span class="stat-text">Global Countries</span>
+                    <span class="stat-text" data-i18n="stats_global_countries">Global Countries</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">500+</span>
-                    <span class="stat-text">Healthcare Clients</span>
+                    <span class="stat-text" data-i18n="stats_healthcare_clients">Healthcare Clients</span>
                 </div>
             </div>
         </div>
@@ -240,8 +242,9 @@
         <div class="bg-ellipse products-ellipse-4"></div>
         <div class="container">
             <div class="products-header">
-                <h2>Comprehensive Healthcare Product Range</h2>
-                <p>From pharmaceuticals to medical equipment, we offer a complete range of healthcare products for
+                <h2 data-i18n="header_comprehensive">Comprehensive Healthcare Product Range</h2>
+                <p data-i18n="header_comprehensive_desc">From pharmaceuticals to medical equipment, we offer a complete
+                    range of healthcare products for
                     hospitals, laboratories, and institutions worldwide.</p>
             </div>
             <div class="products-carousel">
@@ -259,10 +262,11 @@
                                     alt="Pharmaceutical Products">
                             </div>
                             <div class="card-content">
-                                <h3>Pharmaceutical Products</h3>
-                                <p>Generic medicines, active pharmaceutical ingredients, and formulations.</p>
-                                <a href="products-listing.html?category=pharmaceutical-products"
-                                    class="card-link">Explore Products
+                                <h3 data-i18n="prod_pharma">Pharmaceutical Products</h3>
+                                <p data-i18n="prod_pharma_desc">Generic medicines, active pharmaceutical ingredients,
+                                    and formulations.</p>
+                                <a href="products-listing.html?category=pharmaceutical-products" class="card-link"><span
+                                        data-i18n="btn_explore">Explore Products</span>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -277,10 +281,11 @@
                                     alt="Medical Disposables">
                             </div>
                             <div class="card-content">
-                                <h3>Medical Disposables</h3>
-                                <p>Gloves, syringes, masks, gowns, and protective equipment.</p>
-                                <a href="products-listing.html?category=medical-disposables" class="card-link">Explore
-                                    Products
+                                <h3 data-i18n="prod_disposables">Medical Disposables</h3>
+                                <p data-i18n="prod_disposables_desc">Gloves, syringes, masks, gowns, and protective
+                                    equipment.</p>
+                                <a href="products-listing.html?category=medical-disposables" class="card-link"><span
+                                        data-i18n="btn_explore">Explore Products</span>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -295,9 +300,11 @@
                                     alt="Wound Care & Oncology">
                             </div>
                             <div class="card-content">
-                                <h3>Wound Care & Oncology</h3>
-                                <p>Bandages, gauze, surgical dressings, and wound management.</p>
-                                <a href="products-listing.html?category=wound-care" class="card-link">Explore Products
+                                <h3 data-i18n="prod_wound">Wound Care & Oncology</h3>
+                                <p data-i18n="prod_wound_desc">Bandages, gauze, surgical dressings, and wound
+                                    management.</p>
+                                <a href="products-listing.html?category=wound-care" class="card-link"><span
+                                        data-i18n="btn_explore">Explore Products</span>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -312,10 +319,11 @@
                                     alt="Hospital Equipment">
                             </div>
                             <div class="card-content">
-                                <h3>Hospital Equipment</h3>
-                                <p>Medical devices, diagnostic equipment, and hospital furniture.</p>
-                                <a href="products-listing.html?category=hospital-equipment" class="card-link">Explore
-                                    Products
+                                <h3 data-i18n="prod_equipment">Hospital Equipment</h3>
+                                <p data-i18n="prod_equipment_desc">Medical devices, diagnostic equipment, and hospital
+                                    furniture.</p>
+                                <a href="products-listing.html?category=hospital-equipment" class="card-link"><span
+                                        data-i18n="btn_explore">Explore Products</span>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -335,7 +343,7 @@
             </div>
             <div class="products-actions">
                 <a href="products.html" class="view-all-btn">
-                    <span>View All Products</span>
+                    <span data-i18n="btn_view_all">View All Products</span>
                     <img src="assets/icon_arrow_figma.svg" alt="" class="view-all-icon">
                 </a>
             </div>
@@ -349,8 +357,9 @@
         <div class="bg-ellipse solutions-new-ellipse-4"></div>
         <div class="container">
             <div class="solutions-new-header">
-                <h2>Tailored Solutions for Every Healthcare Need</h2>
-                <p>Industry-specific solutions designed to meet the unique requirements of hospitals, laboratories,
+                <h2 data-i18n="header_solutions">Tailored Solutions for Every Healthcare Need</h2>
+                <p data-i18n="header_solutions_desc">Industry-specific solutions designed to meet the unique
+                    requirements of hospitals, laboratories,
                     pharmaceutical companies, and global distributors.</p>
             </div>
             <div class="solutions-cards-grid">
@@ -362,8 +371,9 @@
                                 stroke="#0E7F75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3>For Hospitals</h3>
-                    <p>Comprehensive supply solutions for healthcare facilities of all sizes</p>
+                    <h3 data-i18n="sol_hospitals">For Hospitals</h3>
+                    <p data-i18n="sol_hospitals_desc">Comprehensive supply solutions for healthcare facilities of all
+                        sizes</p>
                     <span class="solution-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -380,8 +390,8 @@
                                 stroke="#0E7F75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3>For Laboratories</h3>
-                    <p>Research-grade supplies, reagents, and laboratory equipment</p>
+                    <h3 data-i18n="sol_labs">For Laboratories</h3>
+                    <p data-i18n="sol_labs_desc">Research-grade supplies, reagents, and laboratory equipment</p>
                     <span class="solution-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -400,8 +410,8 @@
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3>For Pharm Companies</h3>
-                    <p>Bulk pharmaceutical ingredients and contract manufacturing</p>
+                    <h3 data-i18n="sol_pharma">For Pharm Companies</h3>
+                    <p data-i18n="sol_pharma_desc">Bulk pharmaceutical ingredients and contract manufacturing</p>
                     <span class="solution-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -417,8 +427,8 @@
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3>Export Solutions</h3>
-                    <p>Global distribution with regulatory compliance support</p>
+                    <h3 data-i18n="sol_export">Export Solutions</h3>
+                    <p data-i18n="sol_export_desc">Global distribution with regulatory compliance support</p>
                     <span class="solution-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
@@ -438,8 +448,9 @@
         <div class="bg-ellipse quality-ellipse-5"></div>
         <div class="container quality-container">
             <div class="quality-content">
-                <h2>Internationally Certified Quality Standards</h2>
-                <p>Our commitment to quality is demonstrated through rigorous certifications and compliance with
+                <h2 data-i18n="header_quality">Internationally Certified Quality Standards</h2>
+                <p data-i18n="header_quality_desc">Our commitment to quality is demonstrated through rigorous
+                    certifications and compliance with
                     international healthcare standards. Every product undergoes strict quality control processes to
                     ensure safety and efficacy.</p>
 
@@ -449,8 +460,9 @@
                             <img src="assets/icons/checkmark-icon.svg" alt="Check">
                         </div>
                         <div class="quality-list-content">
-                            <strong>ISO 9001:2015 Certified</strong>
-                            <span>Quality management systems certified for manufacturing and distribution.</span>
+                            <strong data-i18n="qual_iso">ISO 9001:2015 Certified</strong>
+                            <span data-i18n="qual_iso_desc">Quality management systems certified for manufacturing and
+                                distribution.</span>
                         </div>
                     </li>
                     <li>
@@ -458,8 +470,9 @@
                             <img src="assets/icons/checkmark-icon.svg" alt="Check">
                         </div>
                         <div class="quality-list-content">
-                            <strong>GDP Compliant</strong>
-                            <span>Good Distribution Practice compliance for pharmaceutical logistics.</span>
+                            <strong data-i18n="qual_gdp">GDP Compliant</strong>
+                            <span data-i18n="qual_gdp_desc">Good Distribution Practice compliance for pharmaceutical
+                                logistics.</span>
                         </div>
                     </li>
                     <li>
@@ -467,8 +480,9 @@
                             <img src="assets/icons/checkmark-icon.svg" alt="Check">
                         </div>
                         <div class="quality-list-content">
-                            <strong>Pharmexcil Member</strong>
-                            <span>Registered member of the Pharmaceutical Export Promotion Council.</span>
+                            <strong data-i18n="qual_pharmexcil">Pharmexcil Member</strong>
+                            <span data-i18n="qual_pharmexcil_desc">Registered member of the Pharmaceutical Export
+                                Promotion Council.</span>
                         </div>
                     </li>
                     <li>
@@ -476,13 +490,14 @@
                             <img src="assets/icons/checkmark-icon.svg" alt="Check">
                         </div>
                         <div class="quality-list-content">
-                            <strong>FIEO Member</strong>
-                            <span>Federation of Indian Export Organisations membership.</span>
+                            <strong data-i18n="qual_fieo">FIEO Member</strong>
+                            <span data-i18n="qual_fieo_desc">Federation of Indian Export Organisations
+                                membership.</span>
                         </div>
                     </li>
                 </ul>
-                <button class="btn btn-outline quality-btn">View All Certifications <span
-                        class="arrow-icon">→</span></button>
+                <button class="btn btn-outline quality-btn" data-i18n="btn_view_all_cert">View All Certifications
+                    →</button>
             </div>
             <div class="quality-grid">
                 <div class="quality-card">
@@ -490,21 +505,21 @@
                         <img src="assets/icons/iso-icon.svg" alt="ISO Icon">
                     </div>
                     <h4>ISO 9001:2015</h4>
-                    <span>Quality Management</span>
+                    <span data-i18n="qual_mgmt">Quality Management</span>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon">
                         <img src="assets/icons/gdp-icon.svg" alt="GDP Icon">
                     </div>
                     <h4>GDP</h4>
-                    <span>Good Distribution Practice</span>
+                    <span data-i18n="qual_dist">Good Distribution Practice</span>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon">
                         <img src="assets/icons/pharmexcil-icon.svg" alt="Pharmexcil Icon">
                     </div>
                     <h4>Pharmexcil</h4>
-                    <span>Export Council Member</span>
+                    <span data-i18n="qual_export">Export Council Member</span>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon">
@@ -524,7 +539,7 @@
         <div class="bg-ellipse presence-ellipse-3"></div>
         <div class="container">
             <div class="presence-header-center">
-                <h2>Our Global Presence</h2>
+                <h2 data-i18n="header_presence">Our Global Presence</h2>
                 <p>We extend our healthcare solutions to partners in over 35 countries worldwide, ensuring reliable
                     supply chains and quality products across borders.</p>
             </div>
@@ -573,12 +588,14 @@
         <div class="bg-ellipse cta-ellipse-1"></div>
         <div class="bg-ellipse cta-ellipse-2"></div>
         <div class="container cta-container">
-            <h2>Looking for a reliable healthcare supplier?</h2>
-            <p>Contact us for a customized service to explore distribution partnership opportunities and build a
+            <h2 data-i18n="header_cta">Looking for a reliable healthcare supplier?</h2>
+            <p data-i18n="header_cta_desc">Contact us for a customized service to explore distribution partnership
+                opportunities and build a
                 healthier world together.</p>
             <div class="cta-actions">
-                <button id="cta-get-quote-btn" class="btn btn-white">Request Quote →</button>
-                <a href="contact.html" class="btn btn-outline-white">Contact Us</a>
+                <button id="cta-get-quote-btn" class="btn btn-white" data-i18n="btn_request_quote">Request Quote
+                    →</button>
+                <a href="contact.html" class="btn btn-outline-white" data-i18n="btn_contact_us">Contact Us</a>
             </div>
         </div>
     </section>
@@ -625,49 +642,51 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Products</h4>
+                    <h4 data-i18n="footer_products">Products</h4>
                     <ul>
-                        <li><a href="products.html">Pharmaceuticals</a></li>
-                        <li><a href="products.html">Medical Disposables</a></li>
-                        <li><a href="products.html">Wound Care</a></li>
-                        <li><a href="products.html">Hospital Equipment</a></li>
+                        <li><a href="products.html" data-i18n="footer_pharma">Pharmaceuticals</a></li>
+                        <li><a href="products.html" data-i18n="footer_disposables">Medical Disposables</a></li>
+                        <li><a href="products.html" data-i18n="footer_wound">Wound Care</a></li>
+                        <li><a href="products.html" data-i18n="footer_equipment">Hospital Equipment</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Solutions</h4>
+                    <h4 data-i18n="footer_solutions">Solutions</h4>
                     <ul>
-                        <li><a href="solutions.html">For Hospitals</a></li>
-                        <li><a href="solutions.html">For Laboratories</a></li>
-                        <li><a href="solutions.html">Pharma Companies</a></li>
-                        <li><a href="solutions.html">Export Solutions</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_hospitals">For Hospitals</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_labs">For Laboratories</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_pharma_co">Pharma Companies</a></li>
+                        <li><a href="solutions.html" data-i18n="footer_export">Export Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Resources</h4>
+                    <h4 data-i18n="footer_resources">Resources</h4>
                     <ul>
-                        <li><a href="about.html#quality">Certifications</a></li>
-                        <li><a href="about.html#quality">Quality Assurance</a></li>
-                        <li><a href="products.html">Product Catalog</a></li>
-                        <li><a href="blogs.html">Latest News</a></li>
+                        <li><a href="about.html#quality" data-i18n="footer_cert">Certifications</a></li>
+                        <li><a href="about.html#quality" data-i18n="footer_qa">Quality Assurance</a></li>
+                        <li><a href="products.html" data-i18n="footer_catalog">Product Catalog</a></li>
+                        <li><a href="blogs.html" data-i18n="footer_news">Latest News</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer_company">Company</h4>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="index.html#presence">Global Presence</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+                        <li><a href="faq.html" data-i18n="footer_faq">FAQ</a></li>
+                        <li><a href="index.html#presence" data-i18n="footer_presence">Global Presence</a></li>
+                        <li><a href="contact.html" data-i18n="footer_contact" data-i18n="btn_contact_us">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 Docman Laboratories. All rights reserved.</p>
+                <p class="footer-copyright"><span data-i18n="footer_copyright">© 2025 Docman Laboratories. All rights
+                        reserved.</span></p>
                 <div class="footer-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                    <a href="disclaimer.html">Disclaimer</a>
-                    <a href="payment-options.html">Payment Options</a>
+                    <a href="privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+                    <a href="terms-of-service.html" data-i18n="footer_terms">Terms of Service</a>
+                    <a href="disclaimer.html" data-i18n="footer_disclaimer">Disclaimer</a>
+                    <a href="payment-options.html" data-i18n="footer_payment">Payment Options</a>
                 </div>
                 <div class="footer-social">
                     <a href="#" class="social-icon-link" aria-label="LinkedIn">
@@ -714,6 +733,7 @@
 
     <script src="js/product-data.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 
