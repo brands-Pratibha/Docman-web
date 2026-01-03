@@ -45,6 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 pattern: 'Please enter a valid phone number'
             }
         },
+        country: {
+            required: true,
+            errorMessages: {
+                required: 'Please select or enter your country'
+            }
+        },
         company: {
             required: false,
             maxLength: 100,
@@ -241,9 +247,24 @@ document.addEventListener('DOMContentLoaded', () => {
             Sending...
         `;
 
-        // Simulate form submission (replace with actual API call)
+        // Send data to FormSubmit.co
         try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            const response = await fetch("https://formsubmit.co/ajax/info@docmanlabs.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...data,
+                    _subject: `New Contact Form Submission from ${data.firstName} ${data.lastName}`,
+                    _template: 'table'
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
 
             // Success - show success message
             showSuccessMessage();
@@ -258,8 +279,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
         } catch (error) {
+            console.error('Form submission failed:', error);
             // Error - show error message
-            showFormError('Something went wrong. Please try again later.');
+            showFormError('Failed to send message. Please try again or contact us directly at info@docmanlabs.com.');
         } finally {
             // Restore button
             submitBtn.disabled = false;

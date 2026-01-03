@@ -1,89 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Static Product Catalog (Rich Data)
-    const productCatalog = {
-        1: {
-            id: 1,
-            name: "Digital X-Ray Machine",
-            category: "Diagnostic Equipment",
-            description: "High-resolution digital X-ray system with advanced imaging capabilities for accurate diagnostics.",
-            specs: "Detector Type: Flat Panel (CsI/GoS)\nPower Output: 32kW / 40kW / 50kW\nPixel Pitch: 139 µm",
-            usage: "Used in hospitals and diagnostic centers for general radiography and skeletal imaging.",
-            composition: "Includes X-ray tube, High-frequency generator, Flat Panel Detector, and Workstation.",
-            material: "Medical grade steel chassis with lead shielding.",
-            image: "http://localhost:3845/assets/6daa41b1f7a685690c48c31671c3cdea0960b420.png"
-        },
-        2: {
-            id: 2,
-            name: "Patient Monitoring System",
-            category: "Monitoring Equipment",
-            description: "Advanced patient monitoring system with real-time vitals tracking and remote access capabilities.",
-            specs: "Screen Size: 12.1 inch TFT Color Display\nParameters: ECG, SPO2, NIBP, RESP, TEMP\nBattery: Rechargeable Li-ion (4 hours)",
-            usage: "ICU, Operation Theatres, and General Wards for continuous patient monitoring.",
-            composition: "Main monitor unit, ECG cables, SpO2 sensor, NIBP cuff, and Temperature probe.",
-            material: "High-impact ABS plastic casing.",
-            image: "http://localhost:3845/assets/a560a1395995c99d482c6a902ba94275ebe68c12.png"
-        },
-        3: {
-            id: 3,
-            name: "Hospital Bed - Electric",
-            category: "Patient Care",
-            description: "Fully electric hospital bed with adjustable height, backrest, and leg rest, designed for patient comfort.",
-            specs: "Load Capacity: 250 kg\nAdjustments: Backrest (0-75°), Knee rest (0-45°), Height (450 mm - 750 mm)\nMotors: 3 Linear Actuators",
-            usage: "In-patient departments for long-term patient care and recovery.",
-            composition: "Steel frame with epoxy powder coating, ABS head/foot panels, and collateral railings.",
-            material: "Cold-rolled steel with anti-bacterial ABS plastic panels.",
-            image: "http://localhost:3845/assets/a691331be57ebdf2a73f2c065e45414b8e560d53.png"
-        },
-        4: {
-            id: 4,
-            name: "Ultrasound Scanner",
-            category: "Diagnostic Equipment",
-            description: "Portable ultrasound scanner with multiple probe options for versatile diagnostic applications.",
-            specs: "Display: 15-inch LCD\nModes: B, B/B, 4B, M, B/M\nProbes: Convex, Linear, Transvaginal",
-            usage: "Obstetrics, Gynecology, Cardiology, and Abdominal imaging.",
-            composition: "Main console, Transducer probes, and Imaging software.",
-            material: "Reinforced plastic housing with silicone probe grips.",
-            image: "http://localhost:3845/assets/8cf9544ac2f0fe8c693c2361244966deb3c9fdec.png"
-        },
-        5: {
-            id: 5,
-            name: "Amoxicillin 500mg",
-            category: "Pharmaceutical Products",
-            description: "Broad-spectrum antibiotic effective against a wide range of bacterial infections.",
-            specs: "Dosage: 500mg\nForm: Capsule / Tablet\nShelf Life: 24 Months",
-            usage: "Treatment of respiratory tract infections, urinary tract infections, and skin infections.",
-            composition: "Active Ingredient: Amoxicillin Trihydrate.",
-            material: "Medical grade blister packaging.",
-            image: "assets/logo.png" // Placeholder or specific image
-        },
-        6: {
-            id: 6,
-            name: "Surgical Gloves",
-            category: "Medical Disposables",
-            description: "Sterile latex surgical gloves providing excellent tactile sensitivity and protection.",
-            specs: "Material: Natural Rubber Latex\nSterilization: Gamma Radiation\nSize: 6.0 - 8.5",
-            usage: "Surgical procedures and invasive medical examinations.",
-            composition: "Latex with polymer coating.",
-            material: "Natural Rubber Latex.",
-            image: "assets/logo.png" // Placeholder
-        }
-    };
-
     // Load Items from LocalStorage
     let storedItems = JSON.parse(localStorage.getItem('myProductList')) || [];
 
-    // If empty, seed with demo data logic removed to show actual empty state
-    // if (storedItems.length === 0) { ... }
+    // Check if PRODUCT_DATA is available (should be loaded from product-data.js)
+    if (typeof PRODUCT_DATA === 'undefined') {
+        console.error('PRODUCT_DATA not found. Ensure product-data.js is included.');
+        return;
+    }
 
-    // Merge Stored Items with Catalog Data
+    // Merge Stored Items with Catalog Data (PRODUCT_DATA)
     let displayProducts = storedItems.map(item => {
-        const catalogItem = productCatalog[item.id];
-        if (!catalogItem) return null; // Skip if not in catalog
+        const catalogItem = PRODUCT_DATA.find(p => p.id === item.id);
+
+        // If product not found in current data, we skip it (or could show as "Unknown Product")
+        if (!catalogItem) return null;
 
         return {
-            ...catalogItem,
+            id: catalogItem.id,
+            name: catalogItem.title, // Map title to name for compatibility
+            category: catalogItem.category,
+            // Fallback for rich data that isn't in PRODUCT_DATA
+            description: catalogItem.desc,
+            specs: catalogItem.desc, // Use desc as simple specs
+            usage: "Refer to product packaging or technical data sheet.",
+            composition: "N/A",
+            material: "N/A",
+            image: "assets/logo.png", // Default placeholder
+
+            // User selections
             qty: item.qty,
-            unit: item.unit || 'units',
+            unit: item.unit || catalogItem.unit || 'units',
             whiteLabel: item.whiteLabel || 'Not Requested'
         };
     }).filter(item => item !== null);
@@ -195,40 +141,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const product = displayProducts.find(p => p.id === id);
         if (!product) return;
 
+        // Since we removed detailed specs/usage/etc from PRODUCT_DATA, we simplified this view
+        // to show available info + user choices.
+
         const detailHTML = `
             <div class="product-detail-view">
                  <div class="panel-header" style="border-bottom:none; margin-bottom: 40px;">
-                    <h2>Product Specifications</h2>
+                    <h2>Product Details</h2>
                  </div>
-                <!-- Image Removed per request -->
                 
                 <div class="detail-info">
                     <h2>${product.name}</h2>
                     <p class="detail-category" style="margin-bottom: 32px;">${product.category}</p>
                     
-                    <div class="detail-row">
-                        <span class="detail-label">Units / Quantity</span>
+                     <div class="detail-row">
+                        <span class="detail-label">Quantity</span>
                         <div class="detail-value">${formatNumber(product.qty)} ${product.unit}</div>
                     </div>
 
                     <div class="detail-row">
-                        <span class="detail-label">Product Specifications</span>
-                        <div class="detail-value" style="white-space: pre-line;">${product.specs}</div>
+                        <span class="detail-label">Description</span>
+                        <div class="detail-value" style="white-space: pre-line;">${product.description}</div>
                     </div>
                     
                     <div class="detail-row">
-                         <span class="detail-label">How and where to use</span>
+                         <span class="detail-label">Usage Info</span>
                          <div class="detail-value">${product.usage}</div>
-                    </div>
-
-                    <div class="detail-row">
-                         <span class="detail-label">Composition</span>
-                         <div class="detail-value">${product.composition}</div>
-                    </div>
-
-                    <div class="detail-row">
-                         <span class="detail-label">Material</span>
-                         <div class="detail-value">${product.material}</div>
                     </div>
 
                     <div class="detail-row">

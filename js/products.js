@@ -1,6 +1,6 @@
 /**
  * Products Page JavaScript
- * Handles category filtering and pagination
+ * Handles category filtering, pagination, and dynamic product counts
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -8,9 +8,51 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function initProductsPage() {
+    updateCategoryCounts();
     initCategoryFilters();
     initPagination();
+    initCategoryNavigation();
 }
+
+/**
+ * Update Category Counts Dynamically
+ * Uses the shared PRODUCT_DATA from product-data.js
+ */
+function updateCategoryCounts() {
+    // Check if PRODUCT_DATA is available
+    if (typeof PRODUCT_DATA === 'undefined' || typeof getAllCategoryCounts !== 'function') {
+        console.warn('Product data not loaded. Category counts will not be updated dynamically.');
+        return;
+    }
+
+    const counts = getAllCategoryCounts();
+
+    // Update each category count element
+    document.querySelectorAll('[data-category-count]').forEach(countElement => {
+        const categorySlug = countElement.getAttribute('data-category-count');
+        const count = counts[categorySlug] || 0;
+
+        // Get the count label element
+        const countLabel = countElement.querySelector('.count-label');
+        const labelText = countLabel ? countLabel.textContent : 'products';
+
+        // Update the count with proper formatting
+        if (count > 0) {
+            countElement.innerHTML = `${count}+ <span class="count-label">${labelText}</span>`;
+        } else {
+            countElement.innerHTML = `0 <span class="count-label">${labelText}</span>`;
+        }
+    });
+}
+
+/**
+ * Initialize Category Navigation
+ * Handles click events for categories (hover effects removed per user request)
+ */
+function initCategoryNavigation() {
+    // Hover effects removed per user request - only buttons should have hover effects
+}
+
 
 /**
  * Category Filter Functionality

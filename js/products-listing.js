@@ -18,179 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalWhiteLabel = document.getElementById('modal-white-label');
     const modalSpecs = document.getElementById('modal-specs');
 
-    let currentProductButton = null;
+    // Global variable managed via window to share state with search.js
+    // window.currentProductButton = null; 
 
-    // Dummy Data - expanded products with categorySlug for filtering
-    const products = [
-        // Pharmaceutical Products
-        {
-            id: 1,
-            category: "Pharmaceutical Products",
-            categorySlug: "pharmaceutical-products",
-            title: "Amoxicillin 500mg",
-            desc: "Broad-spectrum antibiotic for bacterial infections.",
-            packaging: "Blister Pack",
-            unit: "pack"
-        },
-        {
-            id: 2,
-            category: "Pharmaceutical Products",
-            categorySlug: "pharmaceutical-products",
-            title: "Metformin 850mg",
-            desc: "Oral diabetes medicine to control blood sugar levels.",
-            packaging: "Strip",
-            unit: "strip"
-        },
-        {
-            id: 3,
-            category: "Pharmaceutical Products",
-            categorySlug: "pharmaceutical-products",
-            title: "Atorvastatin 20mg",
-            desc: "Statin medication for lowering cholesterol.",
-            packaging: "Blister Pack",
-            unit: "pack"
-        },
-        // Medical Disposables
-        {
-            id: 4,
-            category: "Medical Disposables",
-            categorySlug: "medical-disposables",
-            title: "Surgical Gloves",
-            desc: "Sterile latex surgical gloves for medical procedures.",
-            packaging: "Box (50 pairs)",
-            unit: "box"
-        },
-        {
-            id: 5,
-            category: "Medical Disposables",
-            categorySlug: "medical-disposables",
-            title: "Disposable Syringes 5ml",
-            desc: "Single-use syringes with needles for injections.",
-            packaging: "Box (100 units)",
-            unit: "box"
-        },
-        {
-            id: 6,
-            category: "Medical Disposables",
-            categorySlug: "medical-disposables",
-            title: "Face Masks N95",
-            desc: "High-filtration respiratory protection masks.",
-            packaging: "Box (20 units)",
-            unit: "box"
-        },
-        // Wound Care & Oncology
-        {
-            id: 7,
-            category: "Wound Care & Oncology",
-            categorySlug: "wound-care",
-            title: "Sterile Gauze Pads",
-            desc: "Absorbent cotton gauze for wound dressing.",
-            packaging: "Pack (100 units)",
-            unit: "pack"
-        },
-        {
-            id: 8,
-            category: "Wound Care & Oncology",
-            categorySlug: "wound-care",
-            title: "Elastic Bandage Roll",
-            desc: "Compression bandage for sprains and strains.",
-            packaging: "Roll",
-            unit: "roll"
-        },
-        {
-            id: 9,
-            category: "Wound Care & Oncology",
-            categorySlug: "wound-care",
-            title: "Adhesive Surgical Tape",
-            desc: "Medical tape for securing dressings and devices.",
-            packaging: "Roll",
-            unit: "roll"
-        },
-        // Hospital Equipment
-        {
-            id: 10,
-            category: "Hospital Equipment",
-            categorySlug: "hospital-equipment",
-            title: "Hospital Bed - Electric",
-            desc: "Fully electric hospital bed with adjustable positioning.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        {
-            id: 11,
-            category: "Hospital Equipment",
-            categorySlug: "hospital-equipment",
-            title: "Patient Wheelchair",
-            desc: "Foldable wheelchair for patient mobility.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        {
-            id: 12,
-            category: "Hospital Equipment",
-            categorySlug: "hospital-equipment",
-            title: "IV Stand - Stainless Steel",
-            desc: "Adjustable height IV pole with wheels.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        // Diagnostic Equipment
-        {
-            id: 13,
-            category: "Diagnostic Equipment",
-            categorySlug: "diagnostic-equipment",
-            title: "Digital X-Ray Machine",
-            desc: "High-resolution digital X-ray system with advanced imaging.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        {
-            id: 14,
-            category: "Diagnostic Equipment",
-            categorySlug: "diagnostic-equipment",
-            title: "Ultrasound Scanner",
-            desc: "Portable ultrasound scanner with multiple probe options.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        {
-            id: 15,
-            category: "Diagnostic Equipment",
-            categorySlug: "diagnostic-equipment",
-            title: "ECG Machine",
-            desc: "12-lead electrocardiograph for cardiac monitoring.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        // Patient Care
-        {
-            id: 16,
-            category: "Patient Care",
-            categorySlug: "patient-care",
-            title: "Patient Monitoring System",
-            desc: "Advanced patient monitoring with real-time vitals tracking.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        {
-            id: 17,
-            category: "Patient Care",
-            categorySlug: "patient-care",
-            title: "Pulse Oximeter",
-            desc: "Portable device for measuring blood oxygen saturation.",
-            packaging: "Unit",
-            unit: "unit"
-        },
-        {
-            id: 18,
-            category: "Patient Care",
-            categorySlug: "patient-care",
-            title: "Blood Pressure Monitor",
-            desc: "Digital automatic blood pressure measurement device.",
-            packaging: "Unit",
-            unit: "unit"
-        }
-    ];
+    // Use the shared product data from product-data.js
+    // PRODUCT_DATA is available globally from the script include
 
     // Get URL parameter helper function
     function getUrlParameter(name) {
@@ -199,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Update sidebar active state based on current category
-    function updateSidebarActiveState(categorySlug) {
+    function updateSidebarActiveState(categorySlug, subcategorySlug) {
         const sidebarLinks = document.querySelectorAll('.sidebar-categories .category-item');
         sidebarLinks.forEach(link => {
             link.classList.remove('active');
@@ -208,14 +40,82 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
+
+        // Update page title based on filter
+        updatePageTitle(categorySlug, subcategorySlug);
     }
 
-    // Get filtered products based on category
-    function getFilteredProducts(categorySlug) {
-        if (!categorySlug || categorySlug === 'all') {
-            return products;
+    // Update page title based on current filter
+    function updatePageTitle(categorySlug, subcategorySlug) {
+        const categoryNames = {
+            'pharmaceutical-products': 'Pharmaceutical Products',
+            'bandages-surgical': 'Bandages and Surgical Dressings',
+            'dental-equipment': 'Dental Equipment',
+            'hospital-equipment': 'Hospital Equipment',
+            'medical-disposables': 'Medical Disposables',
+            'wound-care': 'Wound Care & Oncology',
+            'diagnostic-equipment': 'Diagnostic Equipment',
+            'patient-care': 'Patient Care'
+        };
+
+        const subcategoryNames = {
+            'antibiotics': 'Antibiotics',
+            'cardiovascular': 'Cardiovascular',
+            'cns': 'CNS',
+            'anti-diabetic': 'Anti-diabetic',
+            'analgesics': 'Analgesics',
+            'gauze': 'Gauze',
+            'crepe': 'Crepe',
+            'elastic': 'Elastic',
+            'compress': 'Compress',
+            'paraffin': 'Paraffin',
+            'cotton': 'Cotton',
+            'plaster-of-paris': 'Plaster of Paris Bandages',
+            'machines': 'Machines',
+            'hand-pieces': 'Hand Pieces',
+            'filling-materials': 'Filling Materials',
+            'polishing-items': 'Polishing Items',
+            'diagnostic': 'Diagnostic',
+            'surgical': 'Surgical',
+            'patient-care': 'Patient Care',
+            'laboratory': 'Laboratory',
+            'syringes': 'Syringes',
+            'gloves': 'Gloves',
+            'catheters': 'Catheters',
+            'iv-sets': 'IV Sets'
+        };
+
+        let title = 'All Products';
+        if (categorySlug && categoryNames[categorySlug]) {
+            title = categoryNames[categorySlug];
+            if (subcategorySlug && subcategoryNames[subcategorySlug]) {
+                title += ' - ' + subcategoryNames[subcategorySlug];
+            }
         }
-        return products.filter(product => product.categorySlug === categorySlug);
+
+        // Update the document title
+        document.title = title + ' - Docman Labs';
+    }
+
+    // Get filtered products based on category and subcategory
+    function getFilteredProductsLocal(categorySlug, subcategorySlug) {
+        // Use the global function from product-data.js if available
+        if (typeof getFilteredProducts === 'function') {
+            return getFilteredProducts(categorySlug, subcategorySlug);
+        }
+
+        // Fallback to PRODUCT_DATA if function not available
+        let filtered = PRODUCT_DATA || [];
+
+        if (categorySlug && categorySlug !== 'all') {
+            filtered = filtered.filter(p => p.categorySlug === categorySlug);
+        }
+
+        if (subcategorySlug) {
+            filtered = filtered.filter(p => p.subcategorySlug === subcategorySlug);
+        }
+
+        return filtered;
     }
 
     // Render Function (No Images)
@@ -223,14 +123,24 @@ document.addEventListener('DOMContentLoaded', () => {
         // Only if we are on the products-listing page
         if (!productsContainer) return;
 
-        // Get category from URL parameter
+        // If there's a search query in the URL, let search.js handle rendering
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('search');
+        if (searchQuery && searchQuery.trim().length >= 2) {
+            // search.js will handle filtering and rendering
+            updateSidebarCounts();
+            return;
+        }
+
+        // Get category and subcategory from URL parameters
         const categorySlug = getUrlParameter('category');
+        const subcategorySlug = getUrlParameter('subcategory');
 
         // Update sidebar active state
-        updateSidebarActiveState(categorySlug);
+        updateSidebarActiveState(categorySlug, subcategorySlug);
 
         // Get filtered products
-        const filteredProducts = getFilteredProducts(categorySlug);
+        const filteredProducts = getFilteredProductsLocal(categorySlug, subcategorySlug);
 
         productsContainer.innerHTML = '';
 
@@ -249,9 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'product-card';
 
+            // Add subcategory info if available
+            const subcategoryInfo = product.subcategory ? `<span class="card-subcategory">${product.subcategory}</span>` : '';
+
             const contentHtml = `
                 <div class="card-details">
                     <span class="card-category">${product.category}</span>
+                    ${subcategoryInfo}
                     <h3 class="card-title">${product.title}</h3>
                     <p class="card-desc">${product.desc}</p>
                 </div>
@@ -277,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', function () {
                 if (this.classList.contains('added')) return; // Ignore if already added
 
-                currentProductButton = this;
+                window.currentProductButton = this;
                 const title = this.getAttribute('data-title');
                 const cat = this.getAttribute('data-cat');
                 const pkg = this.getAttribute('data-pkg');
@@ -297,13 +211,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = 'hidden';
             });
         });
+
+        // Update sidebar category counts
+        updateSidebarCounts();
+    }
+
+    // Update sidebar category counts dynamically
+    function updateSidebarCounts() {
+        if (typeof getAllCategoryCounts !== 'function' || typeof PRODUCT_DATA === 'undefined') return;
+
+        const counts = getAllCategoryCounts();
+        const sidebarLinks = document.querySelectorAll('.sidebar-categories .category-item');
+
+        sidebarLinks.forEach(link => {
+            const category = link.getAttribute('data-category');
+            const countSpan = link.querySelector('.cat-count');
+
+            if (countSpan) {
+                if (category === 'all') {
+                    countSpan.textContent = PRODUCT_DATA.length;
+                } else if (counts[category]) {
+                    countSpan.textContent = counts[category];
+                } else {
+                    countSpan.textContent = '0';
+                }
+            }
+        });
     }
 
     // Modal Logic
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
-        currentProductButton = null;
+        window.currentProductButton = null;
     }
 
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
@@ -332,13 +272,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Confirm Add Logic
     if (modalConfirmBtn) {
         modalConfirmBtn.addEventListener('click', () => {
-            if (currentProductButton) {
+            if (window.currentProductButton) {
                 const qty = parseInt(modalQty.value) || 1;
                 const title = modalTitle.textContent;
                 const category = modalCat.textContent;
-                const id = parseInt(currentProductButton.getAttribute('data-id'));
-                const packaging = currentProductButton.getAttribute('data-pkg');
-                const unit = currentProductButton.getAttribute('data-unit') || 'units';
+                const id = parseInt(window.currentProductButton.getAttribute('data-id'));
+                const packaging = window.currentProductButton.getAttribute('data-pkg');
+                const unit = window.currentProductButton.getAttribute('data-unit') || 'units';
 
                 const customization = modalCustomization.value;
                 const whiteLabel = modalWhiteLabel.checked ? "Requested" : "Not Requested";
@@ -369,8 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 saveList();
 
                 // Change Button State
-                currentProductButton.innerHTML = '<i class="fa-solid fa-check"></i> Added';
-                currentProductButton.classList.add('added');
+                window.currentProductButton.innerHTML = '<i class="fa-solid fa-check"></i> Added';
+                window.currentProductButton.classList.add('added');
 
                 // Close modal
                 closeModal();

@@ -195,6 +195,21 @@ body {
     display: block;
 }
 
+/* Subcategory Pill Label */
+.card-subcategory {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #009689;
+    background: rgba(0, 150, 137, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    display: inline-block;
+    width: auto;
+    max-width: fit-content;
+}
+
 .card-title {
     font-size: 18px;
     font-weight: 600;
