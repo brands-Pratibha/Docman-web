@@ -605,6 +605,288 @@ const PRODUCT_DATA = [
         desc: "High-filtration respiratory protection masks.",
         packaging: "Box (20 units)",
         unit: "box"
+    },
+
+    // ========================================
+    // Veterinary Products
+    // ========================================
+    // Injection
+    {
+        id: 52,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Ivermectin+Clorsulon Injection 1%+10% 10ml",
+        desc: "Antiparasitic injection for livestock treatment.",
+        packaging: "Vial (10ml)",
+        unit: "vial"
+    },
+    {
+        id: 53,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Ivermectin+Clorsulon Injection 1%+10% 50ml",
+        desc: "Antiparasitic injection for livestock treatment.",
+        packaging: "Vial (50ml)",
+        unit: "vial"
+    },
+    {
+        id: 54,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Ivermectin+Clorsulon Injection 1%+10% 100ml",
+        desc: "Antiparasitic injection for livestock treatment.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 55,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Nitroxynil Injection 25% 250ml",
+        desc: "Anthelmintic injection for cattle and sheep.",
+        packaging: "Vial (250ml)",
+        unit: "vial"
+    },
+    {
+        id: 56,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Oxytetracycline Injection 5% 50ml",
+        desc: "Broad-spectrum antibiotic for veterinary use.",
+        packaging: "Vial (50ml)",
+        unit: "vial"
+    },
+    {
+        id: 57,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Oxytetracycline Injection 5% 100ml",
+        desc: "Broad-spectrum antibiotic for veterinary use.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 58,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Oxytetracycline Injection 20% 50ml",
+        desc: "High-concentration antibiotic for veterinary use.",
+        packaging: "Vial (50ml)",
+        unit: "vial"
+    },
+    {
+        id: 59,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Oxytetracycline Injection 20% 100ml",
+        desc: "High-concentration antibiotic for veterinary use.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 60,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Tylosine Injection 10% 100ml",
+        desc: "Macrolide antibiotic for livestock infections.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 61,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Gentamycin Injection 4% 100ml",
+        desc: "Aminoglycoside antibiotic for veterinary use.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 62,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Gentamycin Injection 8% 100ml",
+        desc: "High-concentration aminoglycoside antibiotic.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 63,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Meloxicam+Paracetamol Injection 0.5%+15% 100ml",
+        desc: "Anti-inflammatory and analgesic for animals.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 64,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Analgin Injection 50% 100ml",
+        desc: "Analgesic and antipyretic for veterinary use.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 65,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Sulfadimidine Sodium Injection 33.3% 100ml",
+        desc: "Sulfonamide antibiotic for livestock.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 66,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Diminazene Acceturate+Phenazone Injection 7%+37.5% 50ml",
+        desc: "Antiprotozoal for treatment of trypanosomosis.",
+        packaging: "Vial (50ml)",
+        unit: "vial"
+    },
+    {
+        id: 67,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Diminazene Acceturate+Phenazone Injection 7%+37.5% 100ml",
+        desc: "Antiprotozoal for treatment of trypanosomosis.",
+        packaging: "Vial (100ml)",
+        unit: "vial"
+    },
+    {
+        id: 68,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Fortified Procaine Penicillin Injection 4,000,000 IU",
+        desc: "Penicillin antibiotic for bacterial infections.",
+        packaging: "Vial",
+        unit: "vial"
+    },
+    {
+        id: 69,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Fortified Procaine Penicillin Injection (Oily) 34,000,000 IU",
+        desc: "Long-acting oily penicillin antibiotic.",
+        packaging: "Vial",
+        unit: "vial"
+    },
+    {
+        id: 70,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Injection",
+        subcategorySlug: "injection",
+        title: "Benzathine Penicillin Injection 4,800,000 IU",
+        desc: "Long-acting penicillin antibiotic dry powder.",
+        packaging: "Vial",
+        unit: "vial"
+    },
+    // Tablet
+    {
+        id: 71,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Tablet",
+        subcategorySlug: "tablet",
+        title: "Praziquantel 50mg + Pyrantel Pamoate 144mg + Fenbendazole 150mg Tablets",
+        desc: "Broad-spectrum dewormer for pets.",
+        packaging: "Box (4 bolus/blister)",
+        unit: "box"
+    },
+    {
+        id: 72,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Tablet",
+        subcategorySlug: "tablet",
+        title: "Levamisole Hydrochloride Bolus 150mg",
+        desc: "Anthelmintic bolus for livestock deworming.",
+        packaging: "Bolus (2.5g)",
+        unit: "bolus"
+    },
+    {
+        id: 73,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Tablet",
+        subcategorySlug: "tablet",
+        title: "Levamisole Hydrochloride Bolus 300mg",
+        desc: "Anthelmintic bolus for livestock deworming.",
+        packaging: "Bolus (2.5g)",
+        unit: "bolus"
+    },
+    {
+        id: 74,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Tablet",
+        subcategorySlug: "tablet",
+        title: "Levamisole Hydrochloride Bolus 600mg",
+        desc: "Anthelmintic bolus for livestock deworming.",
+        packaging: "Bolus (2.5g)",
+        unit: "bolus"
+    },
+    // Suspension
+    {
+        id: 75,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Suspension",
+        subcategorySlug: "suspension",
+        title: "Cypermethrin 10% EC 100ml",
+        desc: "Insecticide for external parasite control.",
+        packaging: "Bottle (100ml)",
+        unit: "piece"
+    },
+    {
+        id: 76,
+        category: "Veterinary Products",
+        categorySlug: "veterinary-products",
+        subcategory: "Suspension",
+        subcategorySlug: "suspension",
+        title: "Cypermethrin 10% EC 250ml",
+        desc: "Insecticide for external parasite control.",
+        packaging: "Bottle (250ml)",
+        unit: "piece"
     }
 ];
 
