@@ -53,7 +53,9 @@ function getTranslatedProduct(product, lang) {
         'bandages-surgical': 'cat_bandages',
         'dental-equipment': 'cat_dental',
         'hospital-equipment': 'cat_hospital',
-        'medical-disposables': 'cat_disposables'
+        'medical-disposables': 'cat_disposables',
+        'veterinary-products': 'cat_vet',
+        'surgical-products': 'cat_surgical'
     };
 
     // Subcategory Mapping (Slug -> Key)
@@ -81,7 +83,20 @@ function getTranslatedProduct(product, lang) {
         'syringes': 'sub_syringes',
         'gloves': 'sub_gloves',
         'catheters': 'sub_catheters',
-        'iv-sets': 'sub_iv'
+        'iv-sets': 'sub_iv',
+        // Veterinary subcategories
+        'injection': 'sub_injection',
+        'tablet': 'sub_tablet',
+        'suspension': 'sub_suspension',
+        // Surgical subcategories
+        'blades': 'sub_blades',
+        'cannula': 'sub_cannula',
+        'enema-sets': 'sub_enema',
+        'infusion-sets': 'sub_infusion',
+        'blood-collection': 'sub_blood_collection',
+        'urine-bags': 'sub_urine_bags',
+        'tubes': 'sub_tubes',
+        'sutures': 'sub_sutures'
     };
 
     if (window.translations && window.translations[lang]) {

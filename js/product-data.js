@@ -887,6 +887,791 @@ const PRODUCT_DATA = [
         desc: "Insecticide for external parasite control.",
         packaging: "Bottle (250ml)",
         unit: "piece"
+    },
+
+    // ========================================
+    // Surgical Products
+    // ========================================
+    // Blades
+    {
+        id: 77,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Blades",
+        subcategorySlug: "blades",
+        title: "Blade Handle No. 3",
+        desc: "Stainless steel surgical blade handle for scalpels.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 78,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Blades",
+        subcategorySlug: "blades",
+        title: "Blade Handle No. 4",
+        desc: "Stainless steel surgical blade handle for larger blades.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 79,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Blades",
+        subcategorySlug: "blades",
+        title: "Blade Handle No. 7",
+        desc: "Fine surgical blade handle for precision cuts.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 80,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Blades",
+        subcategorySlug: "blades",
+        title: "Surgical Blades No. 10-15 (Sterile/Non-Sterile)",
+        desc: "Surgical blades sizes 10-15, available in sterile and non-sterile variants.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 81,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Blades",
+        subcategorySlug: "blades",
+        title: "Surgical Blades No. 20-25 (Sterile/Non-Sterile)",
+        desc: "Surgical blades sizes 20-25, available in sterile and non-sterile variants.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    // Cannula
+    {
+        id: 82,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Cannula",
+        subcategorySlug: "cannula",
+        title: "Cannula with IV Sets",
+        desc: "Complete cannula set with attached IV administration set.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 83,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Cannula",
+        subcategorySlug: "cannula",
+        title: "Cannula without IV Sets",
+        desc: "Standalone cannula without IV set attachment.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 84,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Cannula",
+        subcategorySlug: "cannula",
+        title: "I.V. Cannula (All Colours)",
+        desc: "Intravenous cannula available in all gauge colors.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 85,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Cannula",
+        subcategorySlug: "cannula",
+        title: "I.V. Cannula with Injection Port & Wings",
+        desc: "IV cannula with injection port and wings for secure placement.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 86,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Cannula",
+        subcategorySlug: "cannula",
+        title: "I.V. Cannula with Injection Port Only",
+        desc: "IV cannula with injection port for medication delivery.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 87,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Cannula",
+        subcategorySlug: "cannula",
+        title: "Safety I.V. Cannula (All Colours)",
+        desc: "Safety IV cannula with needle protection mechanism.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 88,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Cannula",
+        subcategorySlug: "cannula",
+        title: "Pen Like I.V. Cannula (All Colours)",
+        desc: "Pen-style IV cannula for easy insertion.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    // Catheters
+    {
+        id: 89,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "2 Way Siliconized Latex Foley Catheter FR 12",
+        desc: "Two-way siliconized latex Foley catheter, French size 12.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 90,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "2 Way Siliconized Latex Foley Catheter FR 14",
+        desc: "Two-way siliconized latex Foley catheter, French size 14.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 91,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "2 Way Siliconized Latex Foley Catheter FR 16",
+        desc: "Two-way siliconized latex Foley catheter, French size 16.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 92,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "2 Way Siliconized Latex Foley Catheter FR 18",
+        desc: "Two-way siliconized latex Foley catheter, French size 18.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 93,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "2 Way Siliconized Latex Foley Catheter FR 20",
+        desc: "Two-way siliconized latex Foley catheter, French size 20.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 94,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "2 Way Siliconized Latex Foley Catheter FR 22",
+        desc: "Two-way siliconized latex Foley catheter, French size 22.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 95,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "2 Way Siliconized Latex Foley Catheter FR 24",
+        desc: "Two-way siliconized latex Foley catheter, French size 24.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 96,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "3 Way Catheter FR 18",
+        desc: "Three-way catheter for continuous irrigation, French size 18.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 97,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "3 Way Catheter FR 20",
+        desc: "Three-way catheter for continuous irrigation, French size 20.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 98,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "3 Way Catheter FR 22",
+        desc: "Three-way catheter for continuous irrigation, French size 22.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 99,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "3 Way Catheter FR 24",
+        desc: "Three-way catheter for continuous irrigation, French size 24.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 100,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "Central Venous Catheter (CVC) Single Lumen 16G & 14G",
+        desc: "Single lumen central venous catheter for central line access.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 101,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "Central Venous Catheter (CVC) Double Lumen 16G & 14G",
+        desc: "Double lumen central venous catheter for dual access.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 102,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Catheters",
+        subcategorySlug: "catheters",
+        title: "Central Venous Catheter (CVC) Triple Lumen",
+        desc: "Triple lumen central venous catheter for multiple infusions.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    // Enema Sets
+    {
+        id: 103,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Enema Sets",
+        subcategorySlug: "enema-sets",
+        title: "Enema Set Bulb Type",
+        desc: "Bulb-type enema set for rectal administration.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 104,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Enema Sets",
+        subcategorySlug: "enema-sets",
+        title: "Enema Set Can Type",
+        desc: "Can-type enema set for controlled administration.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 105,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Enema Sets",
+        subcategorySlug: "enema-sets",
+        title: "Enema Syringe 200ml",
+        desc: "200ml enema syringe for irrigation procedures.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    // Infusion Sets
+    {
+        id: 106,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Infusion Sets",
+        subcategorySlug: "infusion-sets",
+        title: "Infusion Set (Vented)",
+        desc: "Vented IV infusion set for non-collapsible containers.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 107,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Infusion Sets",
+        subcategorySlug: "infusion-sets",
+        title: "Infusion Set (Non-Vented)",
+        desc: "Non-vented IV infusion set for collapsible bags.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 108,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Infusion Sets",
+        subcategorySlug: "infusion-sets",
+        title: "Micro Infusion Set (Burette Set) 110ml",
+        desc: "110ml burette set for precise pediatric infusions.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 109,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Infusion Sets",
+        subcategorySlug: "infusion-sets",
+        title: "Micro Infusion Set (Burette Set) 150ml",
+        desc: "150ml burette set for controlled fluid delivery.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    // Syringes
+    {
+        id: 110,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 1ml (Without Needle)",
+        desc: "1ml disposable syringe without needle attachment.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 111,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 2ml (Without Needle & With Needle)",
+        desc: "2ml disposable syringe available with or without needle.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 112,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 3ml (Without Needle & With Needle)",
+        desc: "3ml disposable syringe available with or without needle.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 113,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 5ml (Without Needle & With Needle)",
+        desc: "5ml disposable syringe available with or without needle.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 114,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 10ml (Without Needle & With Needle)",
+        desc: "10ml disposable syringe available with or without needle.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 115,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 20ml (Without Needle & With Needle)",
+        desc: "20ml disposable syringe available with or without needle.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 116,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 30ml (Without Needle)",
+        desc: "30ml disposable syringe without needle attachment.",
+        packaging: "Box (50 units)",
+        unit: "box"
+    },
+    {
+        id: 117,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 50ml (Without Needle)",
+        desc: "50ml disposable syringe without needle attachment.",
+        packaging: "Box (25 units)",
+        unit: "box"
+    },
+    {
+        id: 118,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Syringes",
+        subcategorySlug: "syringes",
+        title: "Syringe 60ml (Without Needle)",
+        desc: "60ml disposable syringe without needle attachment.",
+        packaging: "Box (25 units)",
+        unit: "box"
+    },
+    // Blood Collection
+    {
+        id: 119,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Blood Collection",
+        subcategorySlug: "blood-collection",
+        title: "Scalp Vein Set (All Sizes)",
+        desc: "Winged infusion set for pediatric and difficult venous access.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    {
+        id: 120,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Blood Collection",
+        subcategorySlug: "blood-collection",
+        title: "Blood Lancet (All Sizes)",
+        desc: "Sterile blood lancets for capillary blood sampling.",
+        packaging: "Box (100 units)",
+        unit: "box"
+    },
+    // Urine Bags
+    {
+        id: 121,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Urine Bags",
+        subcategorySlug: "urine-bags",
+        title: "Urine Bag with T-Type Outlet 2 Litre",
+        desc: "2 litre urine collection bag with T-type outlet valve.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 122,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Urine Bags",
+        subcategorySlug: "urine-bags",
+        title: "Urine Bag with Push & Pull Type 2 Litre",
+        desc: "2 litre urine collection bag with push and pull outlet.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 123,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Urine Bags",
+        subcategorySlug: "urine-bags",
+        title: "Urine Bag with Bottom Outlet with Hanger 2 Litre",
+        desc: "2 litre urine collection bag with bottom outlet and bed hanger.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 124,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Urine Bags",
+        subcategorySlug: "urine-bags",
+        title: "Urine Bag with T-Type Outlet with Measured Volume 2 Litre",
+        desc: "2 litre urine bag with T-type outlet and volume measurement markings.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    // Tubes
+    {
+        id: 125,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Endotracheal Tube (Cuffed & Plain) 2.0mm to 10.0mm",
+        desc: "Airway management tubes available in cuffed and plain variants.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 126,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Endotracheal Tube (Flexometallic) 2.0mm to 10.0mm",
+        desc: "Reinforced flexometallic endotracheal tube for difficult airways.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 127,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Stomach Tube (Ryle's Tube) FR 6 to FR 20",
+        desc: "Nasogastric tube for gastric decompression and feeding.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 128,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Gastric Feeding Tube FR 4/5/6/8/10/12/14/16",
+        desc: "Enteral feeding tube for nutritional support.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 129,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Suction Catheter Plain FR 5 to FR 18",
+        desc: "Plain suction catheter for airway clearance.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 130,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Suction Catheter with Thumb Control FR 5 to FR 18",
+        desc: "Suction catheter with thumb control for intermittent suction.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 131,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Suction Catheter Closed (72 hours) FR 5 to FR 18",
+        desc: "Closed suction system for 72-hour continuous use.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 132,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Infant Mucus Extractor (Easy-Vac)",
+        desc: "Disposable mucus extractor for neonatal airway clearance.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 133,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Infant Feeding Tube FR 4/5/6/8/10/12/14/16",
+        desc: "Enteral feeding tube for infant nutritional support.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    {
+        id: 134,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Tubes",
+        subcategorySlug: "tubes",
+        title: "Rectal Catheter FR 18/20/22/24/26/28/30",
+        desc: "Rectal tube for bowel decompression and drainage.",
+        packaging: "Unit",
+        unit: "unit"
+    },
+    // Sutures
+    {
+        id: 135,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Catgut (Plain)",
+        desc: "Absorbable plain catgut surgical suture material.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    {
+        id: 136,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Catgut (Chromic)",
+        desc: "Absorbable chromic catgut suture with extended absorption time.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    {
+        id: 137,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Polyglycolic Acid (PGA)",
+        desc: "Synthetic absorbable PGA suture for soft tissue closure.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    {
+        id: 138,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Polyglactine 910",
+        desc: "Synthetic absorbable braided suture material.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    {
+        id: 139,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Silk",
+        desc: "Non-absorbable braided silk suture for skin closure.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    {
+        id: 140,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Polyamide (Nylon)",
+        desc: "Non-absorbable nylon monofilament suture.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    {
+        id: 141,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Polypropylene",
+        desc: "Non-absorbable polypropylene monofilament suture.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    {
+        id: 142,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Sutures",
+        subcategorySlug: "sutures",
+        title: "Suture: Stainless Steel",
+        desc: "Non-absorbable stainless steel wire suture for bone fixation.",
+        packaging: "Box (12 units)",
+        unit: "box"
+    },
+    // Gloves
+    {
+        id: 143,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Gloves",
+        subcategorySlug: "gloves",
+        title: "Surgical Gloves (Powder Free)",
+        desc: "Sterile latex surgical gloves without powder.",
+        packaging: "Box (50 pairs)",
+        unit: "box"
+    },
+    {
+        id: 144,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Gloves",
+        subcategorySlug: "gloves",
+        title: "Surgical Gloves (Powdered)",
+        desc: "Sterile latex surgical gloves with powder for easy donning.",
+        packaging: "Box (50 pairs)",
+        unit: "box"
+    },
+    {
+        id: 145,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Gloves",
+        subcategorySlug: "gloves",
+        title: "Surgical Gloves (Disposable)",
+        desc: "Single-use disposable surgical gloves for procedures.",
+        packaging: "Box (50 pairs)",
+        unit: "box"
+    },
+    {
+        id: 146,
+        category: "Surgical Products",
+        categorySlug: "surgical-products",
+        subcategory: "Gloves",
+        subcategorySlug: "gloves",
+        title: "Examination Gloves (Latex/Nitrile)",
+        desc: "Non-sterile examination gloves in latex or nitrile variants.",
+        packaging: "Box (100 units)",
+        unit: "box"
     }
 ];
 

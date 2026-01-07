@@ -58,8 +58,44 @@ function loadBlog(id) {
         metaDesc.setAttribute('content', getTextSummary(blog.content, 160));
     }
 
-    // 3. Load Related Posts
+    // 3. Initialize Share Buttons
+    initShareButtons(blog);
+
+    // 4. Load Related Posts
     loadRelatedPosts(blog.id, blog.category);
+}
+
+/**
+ * Initialize share buttons with proper URLs for each platform
+ */
+function initShareButtons(blog) {
+    const pageUrl = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(blog.title);
+    const summary = encodeURIComponent(getTextSummary(blog.content, 100));
+
+    // LinkedIn Share
+    const linkedinBtn = document.getElementById('share-linkedin');
+    if (linkedinBtn) {
+        linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+    }
+
+    // Twitter/X Share
+    const twitterBtn = document.getElementById('share-twitter');
+    if (twitterBtn) {
+        twitterBtn.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${title}`;
+    }
+
+    // Facebook Share
+    const facebookBtn = document.getElementById('share-facebook');
+    if (facebookBtn) {
+        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+    }
+
+    // Email Share
+    const emailBtn = document.getElementById('share-email');
+    if (emailBtn) {
+        emailBtn.href = `mailto:?subject=${title}&body=Check out this article: ${pageUrl}`;
+    }
 }
 
 function getInitials(name) {
