@@ -55,16 +55,32 @@ function getTranslatedProduct(product, lang) {
         'hospital-equipment': 'cat_hospital',
         'medical-disposables': 'cat_disposables',
         'veterinary-products': 'cat_vet',
-        'surgical-products': 'cat_surgical'
+        'surgical-products': 'cat_surgical',
+        'narcotic-products': 'cat_narcotic'
     };
 
     // Subcategory Mapping (Slug -> Key)
     const subcategoryMap = {
+        // Pharmaceutical subcategories (new from Excel)
+        'capsules': 'sub_capsules',
+        'tablets': 'sub_tablets',
+        'injectables': 'sub_injectables',
+        'liquid-orals': 'sub_liquid_orals',
+        'dry-syrups': 'sub_dry_syrups',
+        'creams-ointments': 'sub_creams_ointments',
+        'eyeearnasal-drops': 'sub_eye_ear_nasal',
+        'liquid-externals': 'sub_liquid_externals',
+        'powders': 'sub_powders',
+        'suppositories': 'sub_suppositories',
+        'combination-kits': 'sub_combination_kits',
+        'veterinary-tablets': 'sub_vet_tablets',
+        // Legacy pharmaceutical subcategories
         'antibiotics': 'sub_antibiotics',
         'cardiovascular': 'sub_cardio',
         'cns': 'sub_cns',
         'anti-diabetic': 'sub_diabetic',
         'analgesics': 'sub_analgesics',
+        // Bandages & Surgical Dressings
         'gauze': 'sub_gauze',
         'crepe': 'sub_crepe',
         'elastic': 'sub_elastic',
@@ -72,14 +88,17 @@ function getTranslatedProduct(product, lang) {
         'paraffin': 'sub_paraffin',
         'cotton': 'sub_cotton',
         'plaster-of-paris': 'sub_pop',
+        // Dental Equipment
         'machines': 'sub_machines',
         'hand-pieces': 'sub_handpieces',
         'filling-materials': 'sub_filling',
         'polishing-items': 'sub_polishing',
+        // Hospital Equipment
         'diagnostic': 'sub_diagnostic',
         'surgical': 'sub_surgical',
         'patient-care': 'sub_patient',
         'laboratory': 'sub_lab',
+        // Medical Disposables
         'syringes': 'sub_syringes',
         'gloves': 'sub_gloves',
         'catheters': 'sub_catheters',
@@ -96,7 +115,8 @@ function getTranslatedProduct(product, lang) {
         'blood-collection': 'sub_blood_collection',
         'urine-bags': 'sub_urine_bags',
         'tubes': 'sub_tubes',
-        'sutures': 'sub_sutures'
+        'sutures': 'sub_sutures',
+        'general-surgical': 'sub_general_surgical'
     };
 
     if (window.translations && window.translations[lang]) {
