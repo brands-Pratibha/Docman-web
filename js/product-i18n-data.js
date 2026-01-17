@@ -116,7 +116,9 @@ function getTranslatedProduct(product, lang) {
         'urine-bags': 'sub_urine_bags',
         'tubes': 'sub_tubes',
         'sutures': 'sub_sutures',
-        'general-surgical': 'sub_general_surgical'
+        'general-surgical': 'sub_general_surgical',
+        // Dental subcategories
+        'dental-medicines': 'sub_dental_medicines'
     };
 
     if (window.translations && window.translations[lang]) {
