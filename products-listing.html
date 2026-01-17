@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/products-listing.css">
 </head>
@@ -208,8 +209,14 @@
                 </div>
 
                 <!-- Pagination / Load More -->
+                <!-- Pagination Controls -->
                 <div class="listing-footer">
-                    <a href="#" class="view-more-btn">View More <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="pagination-info" id="pagination-info">
+                        <!-- Populated by JS -->
+                    </div>
+                    <nav class="pagination" id="pagination-controls">
+                        <!-- Populated by JS -->
+                    </nav>
                 </div>
             </div>
         </div>
@@ -468,6 +475,7 @@
     <script src="js/search.js"></script>
     <script src="js/products-listing.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

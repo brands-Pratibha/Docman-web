@@ -141,44 +141,152 @@ document.addEventListener('DOMContentLoaded', () => {
         return filtered;
     }
 
-    // Render Function (No Images)
-    function renderProducts() {
-        // Only if we are on the products-listing page
-        if (!productsContainer) return;
+    // Pagination State
+    let currentPage = parseInt(getUrlParameter('page')) || 1;
+    const productsPerPage = 10;
+    let currentFilteredProducts = []; // Store currently filtered products for pagination
 
-        // If there's a search query in the URL, let search.js handle rendering
+    // Reset pagination when filter changes
+    function resetPagination() {
+        currentPage = 1;
+    }
+
+    // Scroll to top of product container
+    function scrollToTop() {
+        if (productsContainer) {
+            const headerOffset = 120; // Adjust for header height
+            const elementPosition = productsContainer.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    }
+
+    // Go to specific page
+    window.goToPage = function (page) {
+        if (page < 1) return;
+        const totalPages = Math.ceil(currentFilteredProducts.length / productsPerPage);
+        if (page > totalPages) return;
+
+        currentPage = page;
+
+        // Update URL
         const urlParams = new URLSearchParams(window.location.search);
-        const searchQuery = urlParams.get('search');
-        if (searchQuery && searchQuery.trim().length >= 2) {
-            // search.js will handle filtering and rendering
+        urlParams.set('page', page);
+        const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+        window.history.pushState({ path: newUrl }, '', newUrl);
+
+        renderProductsPage(); // Render specific page
+        scrollToTop();
+    };
+
+    // Render Pagination Controls
+    function renderPaginationControls(totalItems) {
+        const paginationInfo = document.getElementById('pagination-info');
+        const paginationControls = document.getElementById('pagination-controls');
+
+        if (!paginationInfo || !paginationControls) return;
+
+        const totalPages = Math.ceil(totalItems / productsPerPage);
+
+        // Hide if no items or single page (optional, but requested requirement implies controls always or just for navigation. 
+        // Use case: if 0 items, hide. If < 10 items, show disabled or hide? usually hide controls but show info)
+        if (totalItems === 0) {
+            paginationInfo.innerHTML = '';
+            paginationControls.innerHTML = '';
+            return;
+        }
+
+        // Update Info
+        const startItem = (currentPage - 1) * productsPerPage + 1;
+        const endItem = Math.min(currentPage * productsPerPage, totalItems);
+        paginationInfo.innerHTML = `Showing <strong>${startItem}-${endItem}</strong> of <strong>${totalItems}</strong> products`;
+
+        // Generate Controls
+        let controlsHtml = '';
+
+        // Previous Button
+        controlsHtml += `
+            <button class="page-btn nav-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="window.goToPage(${currentPage - 1})">
+                <i class="fa-solid fa-chevron-left"></i> <span>Prev</span>
+            </button>
+        `;
+
+        // Page Numbers
+        const maxVisiblePages = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+        if (endPage - startPage + 1 < maxVisiblePages) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+
+        if (startPage > 1) {
+            controlsHtml += `<button class="page-btn" onclick="window.goToPage(1)">1</button>`;
+            if (startPage > 2) {
+                controlsHtml += `<span class="page-ellipsis">...</span>`;
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            controlsHtml += `
+                <button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="window.goToPage(${i})">
+                    ${i}
+                </button>
+            `;
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                controlsHtml += `<span class="page-ellipsis">...</span>`;
+            }
+            controlsHtml += `<button class="page-btn" onclick="window.goToPage(${totalPages})">${totalPages}</button>`;
+        }
+
+        // Next Button
+        controlsHtml += `
+            <button class="page-btn nav-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="window.goToPage(${currentPage + 1})">
+                <span>Next</span> <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        `;
+
+        paginationControls.innerHTML = controlsHtml;
+    }
+
+    // Expose functions for search.js (and other modules)
+    window.setFilteredProducts = function (products) {
+        currentFilteredProducts = products;
+    };
+    window.renderProductsPage = renderProductsPage;
+    window.resetPagination = resetPagination;
+    window.renderPaginationControls = renderPaginationControls;
+
+    // Render current page of products
+    function renderProductsPage() {
+        productsContainer.innerHTML = '';
+
+        // Handle Empty State
+        if (currentFilteredProducts.length === 0) {
+            productsContainer.innerHTML = `
+                <div class="no-products-message">
+                    <i class="fa-solid fa-box-open"></i>
+                    <p>No products found.</p>
+                </div>
+            `;
+            renderPaginationControls(0);
             updateSidebarCounts();
             return;
         }
 
-        // Get category and subcategory from URL parameters
-        const categorySlug = getUrlParameter('category');
-        const subcategorySlug = getUrlParameter('subcategory');
+        // Slice products for current page
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const productsToShow = currentFilteredProducts.slice(startIndex, endIndex);
 
-        // Update sidebar active state
-        updateSidebarActiveState(categorySlug, subcategorySlug);
-
-        // Get filtered products
-        const filteredProducts = getFilteredProductsLocal(categorySlug, subcategorySlug);
-
-        productsContainer.innerHTML = '';
-
-        // Show message if no products found
-        if (filteredProducts.length === 0) {
-            productsContainer.innerHTML = `
-                <div class="no-products-message">
-                    <i class="fa-solid fa-box-open"></i>
-                    <p>No products found in this category.</p>
-                </div>
-            `;
-            return;
-        }
-
-        filteredProducts.forEach(product => {
+        productsToShow.forEach(product => {
             // Translate Product Data
             const currentLang = localStorage.getItem('selectedLanguage') || 'EN';
             let displayProduct = product;
@@ -192,17 +300,32 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add subcategory info if available
             const subcategoryInfo = displayProduct.subcategory ? `<span class="card-subcategory">${displayProduct.subcategory}</span>` : '';
 
+            // Check for search query to highlight
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            let displayTitle = displayProduct.title;
+
+            if (searchQuery && typeof window.highlightMatch === 'function') {
+                displayTitle = window.highlightMatch(displayTitle, searchQuery);
+            }
+
+            // Check for highlight ID (scroll to)
+            const highlightId = urlParams.get('highlight');
+            if (highlightId && parseInt(highlightId) === displayProduct.id) {
+                card.classList.add('highlighted');
+                // Scroll to this card after render
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            }
+
             const contentHtml = `
                 <div class="card-details">
                     <span class="card-category">${displayProduct.category}</span>
                     ${subcategoryInfo}
-                    <h3 class="card-title">${displayProduct.title}</h3>
+                    <h3 class="card-title">${displayTitle}</h3>
                     <p class="card-desc">${displayProduct.desc}</p>
                 </div>
-                <!-- Pass packaging data attribute (Original English values for modal logic often preferred, but let's pass translated if needed? 
-                     Actually modal likely needs consistent internal values, but display needs translation. 
-                     For now keeping simple: display is translated. Data attributes? 
-                     Modal Title/Cat will be taken from data attributes. So they WILL be translated in modal too! Perfect.) -->
                 <button class="add-btn" data-id="${displayProduct.id}" data-title="${displayProduct.title}" data-cat="${displayProduct.category}" data-pkg="${displayProduct.packaging}" data-unit="${displayProduct.unit}">
                     <i class="fa-solid fa-plus"></i> Add to List
                 </button>
@@ -212,7 +335,17 @@ document.addEventListener('DOMContentLoaded', () => {
             productsContainer.appendChild(card);
         });
 
-        // Add Event Listeners to new buttons
+        // Re-attach listeners
+        attachAddListeners();
+
+        // Render Pagination Controls
+        renderPaginationControls(currentFilteredProducts.length);
+
+        // Update Sidebar (counts remain total)
+        updateSidebarCounts();
+    }
+
+    function attachAddListeners() {
         document.querySelectorAll('.add-btn').forEach(btn => {
             // Check if already in list (from localStorage)
             const id = parseInt(btn.dataset.id);
@@ -244,9 +377,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = 'hidden';
             });
         });
+    }
 
-        // Update sidebar category counts
-        updateSidebarCounts();
+    // Render Function (No Images)
+    function renderProducts() {
+        // Only if we are on the products-listing page
+        if (!productsContainer) return;
+
+        // If there's a search query in the URL, let search.js handle rendering
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('search');
+        if (searchQuery && searchQuery.trim().length >= 2) {
+            // search.js will handle filtering and rendering
+            updateSidebarCounts();
+            return;
+        }
+
+        // Get category and subcategory from URL parameters
+        const categorySlug = getUrlParameter('category');
+        const subcategorySlug = getUrlParameter('subcategory');
+
+        // Update sidebar active state
+        updateSidebarActiveState(categorySlug, subcategorySlug);
+
+        // Get filtered products
+        currentFilteredProducts = getFilteredProductsLocal(categorySlug, subcategorySlug);
+
+        // Show message if no products found
+        if (currentFilteredProducts.length === 0) {
+            productsContainer.innerHTML = `
+                <div class="no-products-message">
+                    <i class="fa-solid fa-box-open"></i>
+                    <p>No products found in this category.</p>
+                </div>
+            `;
+            // Clear pagination
+            const paginationInfo = document.getElementById('pagination-info');
+            const paginationControls = document.getElementById('pagination-controls');
+            if (paginationInfo) paginationInfo.innerHTML = '';
+            if (paginationControls) paginationControls.innerHTML = '';
+            return;
+        }
+
+        // Reset pagination if category changed (checked typically by comparing stored slug, but simpler to just reset on full render call)
+        // Ideally we only want to reset if the *filter set* changed, not just a re-render. 
+        // But renderProducts() is usually called on load or filter change.
+        // We need to persist page if only language changed?
+        // For now, let's reset to page 1 on fresh render calls primarily driven by filter changes.
+        // resetPagination(); // Called explicitly? Or logic here?
+        // Let's assume renderProducts implies a fresh set or initial load.
+        // If we want to support "refresh current page", we'd call renderProductsPage directly.
+
+        // Reset pagination only if page param is missing?
+        // Actually since we init currentPage from URL, we should NOT reset it blindly here.
+        // But if filtering changed logic... (e.g. language change?)
+        // Let's assume URL is truth.
+        // resetPagination(); 
+
+        // If the calculated page is out of bounds (e.g. filtered list smaller), we should adjust.
+        const totalPages = Math.ceil(currentFilteredProducts.length / productsPerPage);
+        if (currentPage > totalPages && totalPages > 0) {
+            currentPage = 1; // Fallback
+        }
+
+        renderProductsPage();
     }
 
     // Update sidebar category counts dynamically

@@ -615,6 +615,11 @@ function filterProductsBySearch(query) {
         updateSearchResultsHeader(query, filteredProducts.length);
     }
 
+    // Reset pagination to page 1 for new search results
+    if (typeof window.resetPagination === 'function') {
+        window.resetPagination();
+    }
+
     // Render filtered products
     renderFilteredProducts(productsContainer, filteredProducts, query);
 }
@@ -691,6 +696,14 @@ function clearSearch() {
  * @param {string} query - Search query for highlighting
  */
 function renderFilteredProducts(container, products, query) {
+    // If we have the pagination system available (products-listing.js), delegate rendering to it
+    if (typeof window.setFilteredProducts === 'function' && typeof window.renderProductsPage === 'function') {
+        window.setFilteredProducts(products);
+        window.renderProductsPage();
+        return;
+    }
+
+    // Fallback for independent rendering (legacy/safety)
     // Load list items from localStorage
     const listItems = JSON.parse(localStorage.getItem('myProductList')) || [];
 
@@ -810,17 +823,26 @@ function updateSearchUrl(query) {
 
 /**
  * Highlight matching text
- * @param {string} text - Text to highlight
- * @param {string} query - Search query
- * @returns {string} - HTML with highlighted matches
+ * @param {string} text - text to search in
+ * @param {string} query - search query
  */
 function highlightMatch(text, query) {
-    if (!query) return escapeHtml(text);
+    if (!query || query.length < 2) return escapeHtml(text || '');
 
-    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+    const escapedText = escapeHtml(text || '');
+    const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 0);
 
-    return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+    if (words.length === 0) return escapedText;
+
+    // Sort words by length descending to match longest phrases first
+    words.sort((a, b) => b.length - a.length);
+
+    let highlighted = escapedText;
+
+    const regexStr = '(' + words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')';
+    const regex = new RegExp(regexStr, 'gi');
+
+    return highlighted.replace(regex, (match) => `<span class="highlight">${match}</span>`);
 }
 
 /**
@@ -830,10 +852,15 @@ function highlightMatch(text, query) {
  */
 function escapeHtml(text) {
     if (!text) return '';
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
-// Make clearSearch globally available
+// Global Exports
+window.highlightMatch = highlightMatch;
+window.escapeHtml = escapeHtml;
 window.clearSearch = clearSearch;
