@@ -87,32 +87,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData.entries());
 
-                // Format Selected Products for Email
-                let productsListString = '';
-                if (storedItems.length === 0) {
-                    productsListString = 'No products selected.';
-                } else {
-                    productsListString = storedItems.map((item, index) => {
-                        const catalogItem = PRODUCT_DATA.find(p => p.id === item.id);
-                        const title = catalogItem ? catalogItem.title : `Product ID: ${item.id}`;
-                        const unit = item.unit || (catalogItem ? catalogItem.unit : '') || 'units';
-                        return `${index + 1}. ${title} (Qty: ${item.qty} ${unit})`;
-                    }).join('\n');
-                }
-
                 // Calculate Totals
                 const totalQty = storedItems.reduce((sum, item) => sum + (item.qty || 0), 0);
                 const totalProducts = storedItems.length;
 
                 // Prepare Payload for FormSubmit
+                // Capitalize first letter of each word for names
+                const formatName = (name) => {
+                    if (!name) return '';
+                    return name.trim().split(' ').map(word =>
+                        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                    ).join(' ');
+                };
+
+                // Format products list with better structure
+                let formattedProductsList = '';
+                if (storedItems.length === 0) {
+                    formattedProductsList = 'No products selected.';
+                } else {
+                    formattedProductsList = '\n' + storedItems.map((item, index) => {
+                        const catalogItem = PRODUCT_DATA.find(p => p.id === item.id);
+                        const title = catalogItem ? catalogItem.title : `Product ID: ${item.id}`;
+                        const unit = item.unit || (catalogItem ? catalogItem.unit : '') || 'units';
+                        return `  ${index + 1}. ${title}\n     Quantity: ${item.qty} ${unit}`;
+                    }).join('\n\n');
+                }
+
                 const payload = {
-                    ...data,
-                    _subject: `New Quote Request - ${data.fullName}`,
-                    _template: 'table',
-                    _captcha: 'false', // Optional: disable captcha if desired, or leave enabled
-                    'Selected Products': productsListString,
-                    'Total Products Count': totalProducts,
-                    'Total Items Quantity': totalQty
+                    _subject: `New Quote Request - ${formatName(data.fullName)}`,
+                    _template: 'box',
+                    _captcha: 'false',
+
+                    // Contact Information Section
+                    '═══ CONTACT INFORMATION ═══': '━━━━━━━━━━━━━━━━━━━━',
+                    'Full Name': formatName(data.fullName),
+                    'Email Address': data.email,
+                    'Phone Number': data.phone || 'Not provided',
+                    'Company': data.company || 'Not provided',
+
+                    // Products Section
+                    '═══ PRODUCTS REQUESTED ═══': '━━━━━━━━━━━━━━━━━━━━',
+                    'Products': formattedProductsList,
+                    'Total Products': totalProducts,
+                    'Total Quantity': totalQty.toLocaleString(),
+
+                    // Additional Notes Section
+                    '═══ ADDITIONAL NOTES ═══': '━━━━━━━━━━━━━━━━━━━━',
+                    'Message': data.requirements || 'No additional notes provided'
                 };
 
                 // Show loading state

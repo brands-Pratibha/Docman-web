@@ -249,17 +249,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Send data to FormSubmit.co
         try {
+            // Format phone number with country code
+            const fullPhone = data['country-code'] && data.phone
+                ? `${data['country-code']} ${data.phone}`
+                : data.phone || 'Not provided';
+
+            // Capitalize first letter of each word for names
+            const formatName = (name) => {
+                if (!name) return '';
+                return name.trim().split(' ').map(word =>
+                    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                ).join(' ');
+            };
+
+            // Format subject for display
+            const subjectLabels = {
+                'general': 'General Inquiry',
+                'product': 'Product Information',
+                'quote': 'Quote Request',
+                'technical': 'Technical Support',
+                'feedback': 'Feedback',
+                'partnership': 'Partnership',
+                'other': 'Other'
+            };
+            const formattedSubject = subjectLabels[data.subject] || data.subject || 'General Inquiry';
+
+            // Create formatted payload with proper field names and grouping
+            const formattedPayload = {
+                _subject: `New Contact Form Submission - ${formattedSubject}`,
+                _template: 'box',
+
+                // Contact Information Section
+                '═══ CONTACT INFORMATION ═══': '━━━━━━━━━━━━━━━━━━━━',
+                'Full Name': `${formatName(data.firstName)} ${formatName(data.lastName)}`,
+                'Email Address': data.email,
+                'Phone Number': fullPhone,
+                'Country': data.country || 'Not specified',
+                'Company': data.company || 'Not provided',
+
+                // Inquiry Details Section
+                '═══ INQUIRY DETAILS ═══': '━━━━━━━━━━━━━━━━━━━━',
+                'Subject': formattedSubject,
+                'Message': data.message
+            };
+
             const response = await fetch("https://formsubmit.co/ajax/info@docmanlabs.com", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify({
-                    ...data,
-                    _subject: `New Contact Form Submission from ${data.firstName} ${data.lastName}`,
-                    _template: 'table'
-                })
+                body: JSON.stringify(formattedPayload)
             });
 
             if (!response.ok) {
