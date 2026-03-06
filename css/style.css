@@ -125,6 +125,15 @@ body {
     align-items: center;
 }
 
+/* Mobile Menu Overlay - Desktop: acts as inline flex container */
+.mobile-menu-overlay {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
 /* Logo */
 .logo {
     display: flex;
